@@ -1,0 +1,165 @@
+﻿@using WebThoiTrang.Models
+@model WebThoiTrang.Models.CollectionListVm
+
+@{
+    ViewData["Title"] = "Bộ sưu tập";
+}
+<div class="container py-4">
+    <h2 class="text-center mb-5 fw-bold">Khám phá các Bộ Sưu Tập</h2>
+    <hr class="mb-5" />
+
+    @if (!Model.Collections.Any())
+    {
+        <p class="text-center text-muted">Hiện chưa có bộ sưu tập nào được tạo.</p>
+    }
+    else
+    {
+        foreach (var collection in Model.Collections)
+        {
+            <div class="collection-section mb-5">
+                <h3 class="fw-semibold mb-4 text-center text-md-start">@collection.Name</h3>
+                <p class="text-muted text-center text-md-start">@collection.Description</p>
+
+                @if (!collection.Products.Any())
+                {
+                    <p class="text-muted text-center mt-3">Bộ sưu tập này chưa có sản phẩm nào.</p>
+                }
+                else
+                {
+                    <div class="row row-cols-2 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
+                        @foreach (var product in collection.Products.Take(4))
+                        {
+                            // === Bắt đầu đoạn code đã được chỉnh sửa ===
+                            <div class="col">
+                                <div class="product-card h-100">
+                                    <div class="product-image position-relative">
+                                        <img src="@product.MainImage" alt="@product.Name" class="img-fluid rounded product-image">
+                                        <div class="product-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center opacity-0">
+                                            <a href="@Url.Action("Details", "Product", new { id = product.Id })" class="btn btn-light">Xem chi tiết</a>
+                                        </div>
+                                    </div>
+                                    <div class="product-info mt-3">
+                                        <h6 class="product-name">@product.Name</h6>
+                                        <div class="rating mb-2">
+                                            @for (int i = 0; i < product.Rating; i++)
+                                            {
+                                                <i class="fas fa-star text-warning"></i>
+                                            }
+                                            @for (int i = 0; i < (5 - product.Rating); i++)
+                                            {
+                                                <i class="far fa-star text-warning"></i>
+                                            }
+                                        </div>
+                                        <p class="product-price text-danger fw-bold">
+                                            @product.Price.ToString("N0") VND
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            // === Kết thúc đoạn code đã được chỉnh sửa ===
+                        }
+                    </div>
+                }
+            </div>
+            <hr class="my-5" />
+        }
+    }
+</div>
+
+<style>
+    /* CSS styles for the product cards, same as your original code */
+    .product-card-link {
+        text-decoration: none;
+        color: inherit;
+        display: block;
+        height: 100%;
+    }
+
+    .product-card {
+        border: 1px solid #e0e0e0;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        height: 100%;
+    }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+    .product-image-wrapper {
+        position: relative;
+        overflow: hidden;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+    }
+
+    .product-image {
+        width: 100%;
+        height: auto;
+        display: block;
+        transition: filter 0.3s ease;
+    }
+
+    .product-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+        transition: background-color 0.3s ease, opacity 0.3s ease;
+        pointer-events: none;
+        cursor: pointer;
+    }
+
+    .product-card:hover .product-image {
+        filter: blur(3px);
+    }
+
+    .product-card:hover .product-overlay {
+        opacity: 1;
+        background-color: rgba(0, 0, 0, 0.5);
+        pointer-events: auto;
+    }
+
+    .product-overlay .btn {
+        opacity: 0;
+        transform: translateY(10px);
+        transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    .product-card:hover .product-overlay .btn {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .product-info {
+        padding: 1rem;
+    }
+
+    .product-name {
+        font-size: 1.05em;
+        color: #333;
+        line-height: 1.4;
+        min-height: 2.8em;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        font-weight: 500;
+    }
+
+    .product-price {
+        font-size: 1.2em;
+        color: #e74c3c;
+        margin-top: 0.5rem;
+    }
+</style>

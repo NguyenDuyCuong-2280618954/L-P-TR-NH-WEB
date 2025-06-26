@@ -1,0 +1,250 @@
+﻿@page
+@model LoginModel
+
+@{
+    ViewData["Title"] = "Đăng nhập";
+    // Đặt cờ này để _Layout.cshtml biết khi nào cần hiển thị nền và lớp phủ
+    ViewData["ShowLoginBackgroundAndOverlay"] = true;
+}
+
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success">@TempData["SuccessMessage"]</div>
+}
+
+
+@section Styles {
+    <style>
+        /* CSS cho body để đặt hình nền và căn giữa nội dung */
+        body {
+            /* Sửa đường dẫn chính xác: /images/tên_thư_mục_chứa_ảnh/tên_ảnh.đuôi_ảnh */
+            background-image: url('/images/backgroud/background_login.jpg'); /* Đã sửa thành .jpg và đường dẫn backgroud - LƯU Ý LẠI CHÍNH TẢ THƯ MỤC! */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            display: flex; /* Dùng flexbox để căn giữa */
+            /* BỎ ĐI justify-content: center; và align-items: center; */
+            min-height: 100vh; /* Đảm bảo chiều cao tối thiểu là toàn bộ viewport */
+            margin: 0;
+            padding: 0; /* Đảm bảo không có padding thừa */
+            flex-direction: column; /* Để header, main, footer sắp xếp theo cột */
+        }
+        /* ... các CSS khác giữ nguyên ... */
+    
+
+        /* Lớp phủ toàn màn hình (được định nghĩa ở đây nhưng sẽ được render trong _Layout.cshtml) */
+        .page-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* Màu đen với độ mờ 50% */
+            z-index: 1; /* Nằm dưới header/nav/footer và trên background */
+        }
+
+        /* Đảm bảo header nằm trên lớp phủ */
+        header {
+            position: relative; /* Quan trọng để z-index có tác dụng */
+            z-index: 1021; /* Cao hơn z-index mặc định của sticky-top (1020) và overlay (1) */
+            width: 100%; /* Đảm bảo chiếm toàn bộ chiều rộng khi dùng flexbox trên body */
+        }
+
+        /* Đảm bảo thanh điều hướng thứ hai ("Home", "All Products",...) nằm trên lớp phủ */
+        .navbar.d-lg-block { /* Chỉ định chính xác navbar này */
+            position: relative; /* Quan trọng để z-index có tác dụng */
+            z-index: 1020; /* Cao hơn overlay */
+            width: 100%; /* Đảm bảo chiếm toàn bộ chiều rộng khi dùng flexbox trên body */
+        }
+
+        /* Đảm bảo footer nằm trên lớp phủ */
+        footer {
+            /* Nếu footer có position: absolute trong site.css, chỉ cần thêm z-index */
+            
+            /* KHÔNG thêm position: relative ở đây nếu footer đang là absolute */
+        }
+
+        .main-content-wrapper {
+            position: relative; /* Quan trọng để z-index có tác dụng cho wrapper này */
+            z-index: 2; /* Đảm bảo form nằm trên lớp phủ và background */
+            display: flex; /* Dùng flexbox để căn giữa login-container */
+            justify-content: center;
+            align-items: center;
+            flex-grow: 1; /* Cho phép nó mở rộng để chiếm không gian còn lại */
+            width: 100%; /* Đảm bảo chiếm toàn bộ chiều rộng */
+        }
+
+        .login-container {
+            background-color: #fff;
+            padding: 30px 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+            margin: auto;
+        }
+
+        /* Các CSS khác của form đăng nhập (như form-tabs, input, button, links) giữ nguyên */
+        .form-tabs {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 30px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .tab-item {
+            flex: 1;
+            padding-bottom: 15px;
+            cursor: pointer;
+            font-size: 1.1em;
+            font-weight: bold;
+            color: #888;
+            position: relative;
+            text-decoration: none;
+        }
+
+            .tab-item.active {
+                color: #000;
+            }
+
+                .tab-item.active::after {
+                    content: '';
+                    position: absolute;
+                    bottom: -1px;
+                    left: 0;
+                    width: 100%;
+                    height: 3px;
+                    background-color: #000;
+                }
+
+        .form-floating > .form-control,
+        .form-floating > .form-select {
+            height: calc(3.5rem + 2px);
+            padding: 1rem 0.75rem;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+
+        .form-floating > label {
+            padding: 1rem 0.75rem;
+            color: #888;
+        }
+
+        .form-floating > .form-control:not(:placeholder-shown) {
+            padding-top: 1.625rem;
+            padding-bottom: 0.625rem;
+        }
+
+            .form-floating > .form-control:focus ~ label,
+            .form-floating > .form-control:not(:placeholder-shown) ~ label,
+            .form-floating > .form-select ~ label {
+                opacity: .65;
+                transform: scale(.85) translateY(-0.5rem) translateX(0.15rem);
+            }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .login-button-container {
+            display: block;
+            width: 100%;
+            margin-top: 30px;
+        }
+
+        .btn-login {
+            width: 100%;
+            background-color: #000;
+            color: #fff;
+            border: none;
+            padding: 15px 0;
+            font-size: 1.1em;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+            .btn-login:hover {
+                background-color: #333;
+            }
+
+        .text-danger {
+            text-align: left;
+            font-size: 0.9em;
+            margin-top: 5px;
+        }
+
+        .links-container {
+            text-align: left;
+            margin-top: 20px;
+        }
+
+            .links-container p {
+                margin-bottom: 8px;
+            }
+
+            .links-container a {
+                color: #555;
+                text-decoration: none;
+                font-size: 0.9em;
+            }
+
+                .links-container a:hover {
+                    text-decoration: underline;
+                    color: #000;
+                }
+    </style>
+}
+
+@* Loại bỏ thẻ <main> vì nó đã có trong _Layout.cshtml *@
+@* <main role="main"> *@
+<div class="main-content-wrapper">
+    <div class="login-container">
+        <div class="form-tabs">
+            <div class="tab-item active" id="loginTab">Đăng nhập</div>
+            <a href="@Url.Page("./Register", new { returnUrl = Model.ReturnUrl })" class="tab-item" id="registerTab">Đăng ký</a>
+        </div>
+
+        <section>
+            <form id="account" method="post">
+                <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
+                <div class="form-floating mb-3">
+                    <input asp-for="Input.Email" class="form-control" autocomplete="username" aria-required="true" placeholder="Số điện thoại / Email" />
+                    <label asp-for="Input.Email" class="form-label">Số điện thoại / Email</label>
+                    <span asp-validation-for="Input.Email" class="text-danger"></span>
+                </div>
+                <div class="form-floating mb-3">
+                    <input asp-for="Input.Password" class="form-control" autocomplete="current-password" aria-required="true" placeholder="Mật khẩu" />
+                    <label asp-for="Input.Password" class="form-label">Mật khẩu</label>
+                    <span asp-validation-for="Input.Password" class="text-danger"></span>
+                </div>
+                <div class="checkbox mb-3" style="text-align: left;">
+                    <label asp-for="Input.RememberMe" class="form-label">
+                        <input class="form-check-input" asp-for="Input.RememberMe" />
+                        Ghi nhớ tôi
+                    </label>
+                </div>
+                <div class="login-button-container">
+                    <button id="login-submit" type="submit" class="btn-login">Đăng nhập</button>
+                </div>
+                <div class="links-container">
+                    <p>
+                        <a id="forgot-password" asp-page="./ForgotPassword">Quên mật khẩu?</a>
+                    </p>
+                    <p>
+                        <a id="resend-confirmation" asp-page="./ResendEmailConfirmation">Gửi lại email xác nhận</a>
+                    </p>
+                </div>
+            </form>
+        </section>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+    <script>
+        // Javascript cho tab Đăng ký vẫn là một liên kết
+    </script>
+}

@@ -1,0 +1,115 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - TRÌNH</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+    @RenderSection("Styles", required: false) <!-- ✅ Đã thêm dòng này -->
+</head>
+<body>
+    <header class="navbar navbar-expand-lg navbar-light bg-white border-bottom sticky-top">
+        <div class="container">
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <a class="navbar-brand mx-auto" href="@Url.Action("Index", "Home")">
+                <img src="/images/levents-logo.png" alt="TRÌNH" height="30" class="levents-logo">
+            </a>
+
+            <div class="navbar-nav flex-row">
+                <a class="nav-link me-3" href="#"><i class="fas fa-search"></i></a>
+                <a class="nav-link me-3" href="@Url.Action("Index", "ShoppingCart")"><i class="fas fa-shopping-bag"></i></a>
+                <partial name="_LoginPartial" />
+            </div>
+        </div>
+    </header>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light d-none d-lg-block">
+        <div class="container">
+            <div class="collapse navbar-collapse justify-content-center">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="@Url.Action("Index", "Home")">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="@Url.Action("Index", "Product")">All Products</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">New Arrivals</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Collections</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Sale</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main role="main">
+        @RenderBody()
+    </main>
+
+    <footer class="bg-dark text-light py-5 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <h5>TRÌNH</h5>
+                    <p>Thương hiệu thời trang streetwear hàng đầu Việt Nam</p>
+                </div>
+                <div class="col-md-3">
+                    <h6>Sản phẩm</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-light text-decoration-none">Áo thun</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">Áo hoodie</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">Quần jeans</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">Phụ kiện</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h6>Hỗ trợ</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-light text-decoration-none">Liên hệ</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">Hướng dẫn mua hàng</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">Chính sách đổi trả</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h6>Theo dõi chúng tôi</h6>
+                    <div class="d-flex gap-3">
+                        <a href="#" class="text-light"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-light"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-light"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script>
+        function changeMainImage(el) {
+            const mainImg = document.getElementById("mainImage");
+            const newSrc  = el.src;              // dùng src trực tiếp
+
+            if (mainImg.src === newSrc) return;  // ấn vào cùng ảnh → bỏ qua
+
+            mainImg.style.opacity = 0.2;         // hiệu ứng mờ nhẹ
+            mainImg.src = newSrc;
+
+            // Nếu ảnh đã cache sẵn, onload không bắn → fallback
+            if (mainImg.complete) {
+                mainImg.style.opacity = 1;
+            } else {
+                mainImg.onload = () => mainImg.style.opacity = 1;
+            }
+
+            document.querySelectorAll(".thumbnail-image")
+                    .forEach(t => t.classList.remove("active", "border-primary"));
+            el.classList.add("active", "border-primary");
+        }
+    </script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
+

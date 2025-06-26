@@ -1,0 +1,119 @@
+﻿@{
+    ViewData["Title"] = "LEVENTS - Streetwear Fashion";
+    // Ép kiểu ViewData thành List<Product>.
+    // Đảm bảo rằng Controller của bạn đã truyền dữ liệu Product vào ViewData["LatestProducts"].
+    var latestProducts = ViewData["LatestProducts"] as List<WebThoiTrang.Models.Entity.Product>;
+}
+
+<section class="hero-section position-relative">
+    <div class="hero-image">
+        <img src="/images/banner/banner.jpg" alt="Hello Kitty Collection"
+             class="img-fluid w-100" style="height: 70vh; object-fit: cover;">
+    </div>
+    <div class="hero-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center">
+        <div class="text-center text-white">
+
+            <p class="lead mb-4">Bộ sưu tập độc quyền từ Trình</p>
+            <a href="@Url.Action("Index", "Product")" class="btn btn-light btn-lg px-5">
+                Xem sản phẩm
+            </a>
+        </div>
+    </div>
+</section>
+
+
+---
+
+<section class="new-arrivals py-5 bg-light">
+    <div class="container">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h2>Sản phẩm mới</h2>
+            <a href="@Url.Action("Index", "Product")" class="btn btn-dark">Xem tất cả</a>
+        </div>
+        <div class="row">
+            @if (latestProducts != null && latestProducts.Any())
+            {
+                @foreach (var product in latestProducts)
+                {
+                    <div class="col-lg-3 col-md-6 mb-4">
+                        <div class="product-card">
+                            <div class="product-image position-relative">
+                                
+                                <img src="@product.MainImage" alt="@product.Name"
+                                     class="img-fluid rounded">
+                                <div class="product-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center opacity-0">
+                                    <a href="@Url.Action("Details", "Product", new { id = product.Id })"
+                                       class="btn btn-light">Xem chi tiết</a>
+                                </div>
+                            </div>
+                            <div class="product-info mt-3">
+                                <h6>@product.Name</h6>
+                                <div class="rating mb-2">
+                                    
+                                    @for (int i = 0; i < product.Rating; i++)
+                                    {
+                                        <i class="fas fa-star text-warning"></i>
+                                    }
+                                    @for (int i = 0; i < (5 - product.Rating); i++)
+                                    {
+                                        <i class="far fa-star text-warning"></i>
+                                        
+                                    }
+                                </div>
+                                
+                                <p class="price text-danger fw-bold">@product.Price.ToString("N0") VND</p>
+                            </div>
+                        </div>
+                    </div>
+                }
+            }
+            else
+            {
+                <div class="col-12 text-center">
+                    <p>Không có sản phẩm mới nào để hiển thị.</p>
+                </div>
+            }
+        </div>
+    </div>
+</section>
+
+
+
+<section class="brand-story py-5">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <h2 class="mb-4">Câu chuyện thương hiệu</h2>
+                <p class="lead mb-4">
+                    TRÌNH® là thương hiệu thời trang gần hàng đầu Việt Nam,
+                    được thành lập với sứ mệnh mang đến những sản phẩm chất lượng cao
+                    và phong cách độc đáo cho giới trẻ.
+                </p>
+                <p class="mb-4">
+                    Với slogan "Live Your Style", chúng tôi luôn khuyến khích mọi người
+                    thể hiện cá tính riêng thông qua cách ăn mặc và phong cách sống.
+                </p>
+                <a href="#" class="btn btn-outline-dark">Tìm hiểu thêm</a>
+            </div>
+            <div class="col-lg-6">
+                <img src="/images/banner/brand-story.png" alt="Trình Brand Story"
+                     class="img-fluid rounded shadow">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="newsletter py-5 bg-dark text-white">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-6 text-center">
+                <h3 class="mb-3">Đăng ký nhận tin</h3>
+                <p class="mb-4">Nhận thông tin về sản phẩm mới và ưu đãi đặc biệt</p>
+                <form class="d-flex gap-2">
+                    <input type="email" class="form-control" placeholder="Nhập email của bạn">
+                    <button type="submit" class="btn btn-light">Đăng ký</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

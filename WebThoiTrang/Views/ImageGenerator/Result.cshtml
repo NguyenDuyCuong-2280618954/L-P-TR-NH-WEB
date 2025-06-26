@@ -1,0 +1,73 @@
+﻿@using WebThoiTrang.Models.Entity // Đảm bảo đúng namespace của GeneratedImage
+@model WebThoiTrang.Models.Entity.GeneratedImage // Khai báo Model cho View này
+
+@{
+    ViewData["Title"] = "Kết Quả Thử Đồ AI";
+}
+
+<div class="container my-5">
+    <div class="text-center mb-4">
+        <h1>Kết Quả Thử Đồ AI</h1>
+        <p class="lead">Đây là sản phẩm bạn đã thử: <strong>@Model.Product.Name</strong></p>
+    </div>
+
+    <div class="row justify-content-center">
+        <div class="col-md-10">
+            <div class="card p-4 shadow-sm">
+                @if (Model.IsSuccess)
+                {
+                    <h2 class="text-center mb-4 text-success">Thử Đồ Thành Công!</h2>
+                    <div class="row">
+                        <div class="col-md-4 mb-3">
+                            <h5 class="text-center">Ảnh Sản Phẩm</h5>
+                            <!-- productMainImage vẫn có thể từ wwwroot/images/products -->
+                            <img src="@Model.ProductImagePath" alt="Ảnh Sản Phẩm" class="img-fluid img-thumbnail" />
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <h5 class="text-center">Ảnh Người Dùng</h5>
+                            <!-- Dùng đường dẫn mới cho ảnh user -->
+                            <img src="/@Model.UserImagePath" alt="Ảnh Người Dùng" class="img-fluid img-thumbnail" />
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <h5 class="text-center">Ảnh AI Kết Quả</h5>
+                            @if (!string.IsNullOrEmpty(Model.ResultImagePath))
+                            {
+                                <!-- Có thể là URL từ API hoặc đường dẫn cục bộ mới -->
+                                <img src="@Url.Action("GetResultImage", "Image", new { path = Model.ResultImagePath })" class="img-fluid" />
+                            }
+                            else
+                            {
+                                <p class="text-danger">Không có URL ảnh kết quả từ AI.</p>
+                            }
+                        </div>
+                    </div>
+                }
+                else
+                {
+                    <h2 class="text-center mb-4 text-danger">Thử Đồ Thất Bại!</h2>
+                    <p class="text-center">Đã xảy ra lỗi trong quá trình tạo ảnh AI.</p>
+                    <p class="text-center text-danger">Lỗi: @Model.ErrorMessage</p>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <h5 class="text-center">Ảnh Sản Phẩm</h5>
+                            <img src="@Model.ProductImagePath" alt="Ảnh Sản Phẩm" class="img-fluid img-thumbnail" />
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <h5 class="text-center">Ảnh Người Dùng</h5>
+                            <img src="/@Model.UserImagePath" alt="Ảnh Người Dùng" class="img-fluid img-thumbnail" />
+                        </div>
+                    </div>
+                }
+
+                <div class="d-grid gap-2 mt-4">
+                    <a asp-controller="Product" asp-action="Index" class="btn btn-primary btn-lg">
+                        <i class="fas fa-shopping-bag me-2"></i> Tiếp tục mua sắm
+                    </a>
+                    <a asp-controller="Product" asp-action="Details" asp-route-id="@Model.ProductId" class="btn btn-secondary mt-2">
+                        <i class="fas fa-arrow-left me-2"></i> Quay lại chi tiết sản phẩm
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

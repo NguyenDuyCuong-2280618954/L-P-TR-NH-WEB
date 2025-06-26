@@ -1,0 +1,49 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<UserSecretsId>95cca477-7825-48b7-b7bc-5990f5786515</UserSecretsId>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Hangfire" Version="1.8.20" />
+		<PackageReference Include="Hangfire.AspNetCore" Version="1.8.20" />
+		<PackageReference Include="Hangfire.Core" Version="1.8.20" />
+		<PackageReference Include="Hangfire.SqlServer" Version="1.8.20" />
+		<PackageReference Include="MailKit" Version="4.12.1" />
+		<PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.11" />
+		<PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="8.0.11" />
+		<!-- Đã xóa Microsoft.AspNetCore.Mvc.ViewFeatures: -->
+		<!-- Gói này được bao gồm ngầm định trong TargetFramework net8.0 (Microsoft.AspNetCore.App) -->
+		<!-- Thêm nó ở đây sẽ gây ra lỗi NU1102 vì nó không còn là một gói NuGet riêng lẻ ở phiên bản này. -->
+		<PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.11" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="8.0.11" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.11" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.11">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+		<PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.7" />
+		<PackageReference Include="MimeKit" Version="4.12.0" />
+		<PackageReference Include="SixLabors.ImageSharp" Version="3.1.10" />
+		<PackageReference Include="SixLabors.ImageSharp.Web" Version="3.1.5" />
+		<PackageReference Include="System.Net.Http.Json" Version="9.0.6" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Folder Include="Areas\admin\Data\" />
+		<Folder Include="Areas\admin\Models\" />
+		<Folder Include="Migrations\" />
+		<Folder Include="NewFolder\" />
+		<Folder Include="TryOn_Images\product\" />
+		<Folder Include="TryOn_Images\result\" />
+		<Folder Include="TryOn_Images\user\" />
+		<Folder Include="Views\TryOn\" />
+		<Folder Include="wwwroot\images\brand\" />
+		<Folder Include="wwwroot\images\test\result\" />
+		<Folder Include="wwwroot\images\test\user\" />
+	</ItemGroup>
+
+</Project>

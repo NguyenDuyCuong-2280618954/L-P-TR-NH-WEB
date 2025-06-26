@@ -1,0 +1,246 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - TRÌNH</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+    @RenderSection("Styles", required: false)
+</head>
+<body>
+    @* Thêm lớp phủ nền có điều kiện, chỉ hiển thị nếu ViewData["ShowLoginBackgroundAndOverlay"] là true *@
+    @if (ViewData["ShowLoginBackgroundAndOverlay"] != null && (bool)ViewData["ShowLoginBackgroundAndOverlay"])
+    {
+        <div class="page-overlay"></div>
+    }
+
+    <header class="navbar navbar-expand-lg navbar-light bg-white border-bottom sticky-top">
+        <div class="container">
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <a class="navbar-brand mx-auto" asp-area="" asp-controller="Home" asp-action="Index">
+                <img src="/images/levents-logo.png" alt="TRÌNH" height="30" class="levents-logo">
+            </a>
+
+            <div class="navbar-nav flex-row align-items-center position-relative">
+                <!-- 🔍 Tìm kiếm -->
+                <form id="searchForm" method="get" asp-controller="Product" asp-action="Index" class="me-3 search-container position-relative">
+                    <div class="search-box">
+                        <i class="fas fa-search search-icon" id="searchToggle"></i>
+                        <input type="text" name="search" id="searchInput" class="form-control search-input"
+                               placeholder="Tìm sản phẩm..." autocomplete="off" />
+                    </div>
+                    <div id="searchSuggestions" class="list-group position-absolute w-100" style="top: 100%; z-index: 9999;"></div>
+                </form>
+
+
+                <a class="nav-link me-3" asp-area="" asp-controller="ShoppingCart" asp-action="Index">
+                    <i class="fas fa-shopping-bag"></i>
+                </a>
+
+                <partial name="_LoginPartial" />
+            </div>
+
+
+        </div>
+    </header>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light d-none d-lg-block">
+        <div class="container">
+            <div class="collapse navbar-collapse justify-content-center">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" asp-area="" asp-controller="Product" asp-action="Index">All Products</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">New Arrivals</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-controller="Collection" asp-action="Index">Collections</a>
+                    </li>
+                    @* <li class="nav-item"><a class="nav-link" href="#">Sale</a></li> *@
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main role="main" style="flex-grow: 1;">
+        @* Đảm bảo main có flex-grow để chiếm hết không gian còn lại và đẩy footer xuống *@
+        @RenderBody()
+    </main>
+
+    <footer class="bg-dark text-light py-5 mt-5">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-3">
+                    <h5>TRÌNH</h5>
+                    <p>Thương hiệu thời trang streetwear hàng đầu Việt Nam</p>
+                </div>
+                <div class="col-md-3">
+                    <h6>Sản phẩm</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-light text-decoration-none">Áo thun</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">Áo hoodie</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">Quần jeans</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">Phụ kiện</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h6>Hỗ trợ</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-light text-decoration-none">Liên hệ</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">Hướng dẫn mua hàng</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">Chính sách đổi trả</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h6>Theo dõi chúng tôi</h6>
+                    <div class="d-flex gap-3">
+                        <a href="#" class="text-light"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-light"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-light"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script>
+        function changeMainImage(el) {
+            const mainImg = document.getElementById("mainImage");
+            const newSrc  = el.src;          // dùng src trực tiếp
+
+            if (mainImg.src === newSrc) return;  // ấn vào cùng ảnh → bỏ qua
+
+            mainImg.style.opacity = 0.2;       // hiệu ứng mờ nhẹ
+            mainImg.src = newSrc;
+
+            // Nếu ảnh đã cache sẵn, onload không bắn → fallback
+            if (mainImg.complete) {
+                mainImg.style.opacity = 1;
+            } else {
+                mainImg.onload = () => mainImg.style.opacity = 1;
+            }
+
+            document.querySelectorAll(".thumbnail-image")
+                    .forEach(t => t.classList.remove("active", "border-primary"));
+            el.classList.add("active", "border-primary");
+        }
+    </script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
+@section Scripts {
+    <script>
+        const searchInput = document.getElementById('searchInput');
+        const suggestionsBox = document.getElementById('searchSuggestions');
+        const searchForm = document.getElementById('searchForm');
+
+        let lastTerm = "";
+
+        searchInput.addEventListener('input', async function () {
+            const query = searchInput.value.trim();
+            if (!query || query === lastTerm) {
+                return;
+            }
+
+            lastTerm = query;
+
+            try {
+                const response = await fetch(`http://localhost:5025/Product/Suggest?term=${encodeURIComponent(query)}`);
+                const results = await response.json();
+
+                suggestionsBox.innerHTML = '';
+
+                if (results.length === 0) {
+                    suggestionsBox.style.display = 'none';
+                    return;
+                }
+
+                // Hiện dropdown
+                suggestionsBox.style.display = 'block';
+
+                // Nếu chỉ có 1 sản phẩm → chuyển trang luôn
+                if (results.length === 1) {
+                    window.location.href = `/Product/Detail/${results[0].id}`;
+                    return;
+                }
+
+                // Gợi ý nhiều dòng
+                results.forEach(p => {
+                    const item = document.createElement('a');
+                    item.classList.add('list-group-item', 'list-group-item-action');
+                    item.textContent = p.name;
+                    item.href = `/Product/Index?search=${encodeURIComponent(p.name)}`;
+                    suggestionsBox.appendChild(item);
+                });
+            } catch (err) {
+                console.error("Lỗi gợi ý:", err);
+                suggestionsBox.innerHTML = '';
+                suggestionsBox.style.display = 'none';
+            }
+        });
+
+        // Ẩn gợi ý khi click ra ngoài
+        document.addEventListener('click', function (e) {
+            if (!searchForm.contains(e.target)) {
+                suggestionsBox.innerHTML = '';
+                suggestionsBox.style.display = 'none';
+            }
+        });
+
+        // Khi focus lại input nếu còn từ khoá thì hiện lại
+        searchInput.addEventListener('focus', function () {
+            if (searchInput.value.trim()) {
+                searchInput.dispatchEvent(new Event('input'));
+            }
+        });
+    </script>
+}
+@section Styles {
+    <style>
+        .search-container {
+            position: relative;
+            width: 200px;
+        }
+
+        #searchSuggestions {
+            display: none;
+            background: white;
+            border: 1px solid #ccc;
+            max-height: 300px;
+            overflow-y: auto;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            z-index: 9999;
+            border-radius: 4px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+            /* Optional: format items */
+            #searchSuggestions a {
+                padding: 8px 12px;
+                display: block;
+                color: #000;
+                text-decoration: none;
+            }
+
+                #searchSuggestions a:hover {
+                    background-color: #f0f0f0;
+                }
+
+        .search-input {
+            width: 100%;
+        }
+    </style>
+}
+
+
+    

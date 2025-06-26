@@ -1,0 +1,64 @@
+﻿@model WebThoiTrang.Models.ProductDetailWithGeneratedImagesViewModel
+
+@{
+    ViewData["Title"] = $"Ảnh AI của {Model.Product.Name}";
+}
+
+<h1>@Model.Product.Name - Ảnh AI đã tạo</h1>
+
+<div>
+    <h2>Thông tin sản phẩm</h2>
+    <dl class="row">
+        <dt class="col-sm-2">Tên sản phẩm:</dt>
+        <dd class="col-sm-10">@Model.Product.Name</dd>
+
+        <dt class="col-sm-2">Ảnh chính:</dt>
+        <dd class="col-sm-10">
+            @if (!string.IsNullOrEmpty(Model.Product.MainImage))
+            {
+                <img src="~/@Model.Product.MainImage" alt="Ảnh chính sản phẩm" style="max-width: 150px; height: auto;" />
+            }
+        </dd>
+        @* Thêm các thông tin sản phẩm khác bạn muốn hiển thị *@
+    </dl>
+</div>
+
+<hr />
+
+<h2>Các ảnh AI đã tạo cho sản phẩm này</h2>
+
+@if (Model.GeneratedImages != null && Model.GeneratedImages.Any())
+{
+    <div class="row">
+        @foreach (var generatedImage in Model.GeneratedImages)
+        {
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Kết quả AI</h5>
+                        @if (generatedImage.IsSuccess && !string.IsNullOrEmpty(generatedImage.ResultImagePath))
+                        {
+                            <img src="~/@generatedImage.ResultImagePath" alt="Ảnh AI kết quả" class="img-fluid mb-2" />
+                            <p>Tạo lúc: @generatedImage.GeneratedDate.ToString("dd/MM/yyyy HH:mm")</p>
+                            <p>Ảnh gốc người dùng: <img src="~/@generatedImage.UserImagePath" alt="Ảnh người dùng gốc" style="max-width: 80px; height: auto;" /></p>
+                        }
+                        else
+                        {
+                            <p class="text-danger">Không tạo được ảnh AI hoặc đang xử lý.</p>
+                            <p>Lỗi: @generatedImage.ErrorMessage</p>
+                        }
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+}
+else
+{
+    <p>Chưa có ảnh AI nào được tạo cho sản phẩm này.</p>
+}
+
+<div>
+    <a asp-action="Details" asp-route-id="@Model.Product.Id" class="btn btn-secondary">Quay lại chi tiết sản phẩm</a>
+    <a asp-controller="ImageGenerator" asp-action="Index" class="btn btn-info">Tạo ảnh AI mới</a>
+</div>

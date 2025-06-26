@@ -1,0 +1,242 @@
+﻿@page
+@model VerifyCodeModel // Đảm bảo model là VerifyCodeModel
+
+@{
+    ViewData["Title"] = "Xác nhận mã";
+    ViewData["ShowLoginBackgroundAndOverlay"] = true; // Giữ nguyên nếu bạn muốn background này
+}
+
+@section Styles {
+    <style>
+        /* CSS cho body để đặt hình nền CHỈ KHI TRUY CẬP TRANG NÀY */
+        body {
+            background-image: url('/images/backgroud/background_login.jpeg'); /* SỬA ĐƯỜNG DẪN NẾU CẦN */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-color: transparent !important; /* Đảm bảo background không bị màu trắng của body che mất */
+        }
+
+        /* Lớp phủ toàn màn hình */
+        .page-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* Màu đen với độ mờ 50% */
+            z-index: 1; /* Nằm dưới header/nav/footer và trên background */
+        }
+
+        /* Đảm bảo header nằm trên lớp phủ */
+        header {
+            position: relative;
+            z-index: 1021;
+        }
+
+        .navbar.d-lg-block {
+            position: relative;
+            z-index: 1020;
+        }
+
+        /* Wrapper chính để căn giữa form đăng ký */
+        .main-content-wrapper {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-grow: 1;
+            width: 100%;
+        }
+
+        .verify-code-container { /* Thay đổi tên class để phù hợp với trang VerifyCode */
+            background-color: #fff;
+            padding: 30px 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 450px;
+            text-align: center;
+            margin: auto;
+        }
+
+        .form-floating > .form-control {
+            height: calc(3.5rem + 2px);
+            padding: 1rem 0.75rem;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+
+        .form-floating > label {
+            padding: 1rem 0.75rem;
+            color: #888;
+        }
+
+        .form-floating > .form-control:not(:placeholder-shown) {
+            padding-top: 1.625rem;
+            padding-bottom: 0.625rem;
+        }
+
+            .form-floating > .form-control:focus ~ label,
+            .form-floating > .form-control:not(:placeholder-shown) ~ label {
+                opacity: .65;
+                transform: scale(.85) translateY(-0.5rem) translateX(0.15rem);
+            }
+
+        .btn-verify { /* Style cho nút xác nhận */
+            width: 100%;
+            background-color: #000;
+            color: #fff;
+            border: none;
+            padding: 15px 0;
+            font-size: 1.1em;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-top: 20px;
+        }
+
+            .btn-verify:hover {
+                background-color: #333;
+            }
+
+        .text-danger {
+            text-align: left;
+            font-size: 0.9em;
+            margin-top: 5px;
+        }
+
+        #countdown {
+            font-size: 1.1em;
+            font-weight: bold;
+            color: #d9534f; /* Màu đỏ cho bộ đếm */
+            margin-top: 15px;
+            margin-bottom: 15px;
+        }
+
+        #resendCodeButton {
+            margin-top: 10px;
+            background: none;
+            border: none;
+            color: #007bff;
+            cursor: pointer;
+            font-size: 0.95em;
+            text-decoration: underline;
+            padding: 0;
+        }
+
+            #resendCodeButton:disabled {
+                color: #888;
+                cursor: not-allowed;
+                text-decoration: none;
+            }
+    </style>
+}
+
+<div class="main-content-wrapper">
+    <div class="verify-code-container">
+        <h2>Xác nhận Email</h2>
+        <p>Mã xác nhận đã được gửi đến email của bạn. Vui lòng kiểm tra và nhập mã vào ô dưới đây.</p>
+
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
+
+            <div class="form-floating mb-3">
+                <input asp-for="Input.Code" class="form-control" autocomplete="off" aria-required="true" placeholder="Mã xác nhận 6 số" />
+                <label asp-for="Input.Code">Mã xác nhận</label>
+                <span asp-validation-for="Input.Code" class="text-danger"></span>
+            </div>
+            <input type="hidden" asp-for="Input.Email" />
+
+            <div id="countdown"></div>
+            <button type="button" id="resendCodeButton" disabled>Gửi lại mã</button>
+            <span id="resendMessage" style="color: green; display: none;">Mã mới đã được gửi!</span>
+
+            <button type="submit" class="btn-verify">Xác nhận</button>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+    <script>
+        var timeLeft = 60; // Thời gian ban đầu là 60 giây
+        var countdownElement = document.getElementById('countdown');
+        var resendButton = document.getElementById('resendCodeButton');
+        var resendMessage = document.getElementById('resendMessage');
+        var verifyForm = document.querySelector('form'); // Form nhập mã xác nhận
+
+        function updateCountdown() {
+            if (timeLeft > 0) {
+                countdownElement.textContent = 'Mã sẽ hết hạn trong ' + timeLeft + ' giây.';
+                timeLeft--;
+            } else {
+                countdownElement.textContent = 'Mã đã hết hạn.';
+                resendButton.disabled = false; // Bật nút gửi lại
+                clearInterval(countdownInterval); // Dừng bộ đếm
+            }
+        }
+
+        var countdownInterval = setInterval(updateCountdown, 1000); // Cập nhật mỗi giây
+
+        // Chạy lần đầu tiên để hiển thị ngay lập tức
+        updateCountdown();
+
+        // Xử lý sự kiện khi click nút "Gửi lại mã"
+        resendButton.addEventListener('click', async function() {
+            // Vô hiệu hóa nút để tránh gửi nhiều lần
+            resendButton.disabled = true;
+            resendMessage.style.display = 'none'; // Ẩn thông báo cũ nếu có
+
+            // Gửi yêu cầu GET đến một endpoint để gửi lại mã
+            // Bạn cần tạo một handler mới trong VerifyCodeModel.cs để xử lý việc này.
+            // Ví dụ: /Account/VerifyCode?handler=ResendCode
+            const email = '@TempData["Email"]'; // Lấy email từ TempData
+            if (!email) {
+                alert('Không thể gửi lại mã. Vui lòng thử lại từ trang đăng ký.');
+                window.location.href = '/Account/Register'; // Chuyển hướng về trang đăng ký
+                return;
+            }
+
+            try {
+                // Sử dụng fetch API để gửi request
+                const response = await fetch(`/Identity/Account/VerifyCode?handler=ResendCode&email=${encodeURIComponent(email)}`, {
+                    method: 'GET', // Hoặc 'POST' nếu bạn muốn bảo mật hơn
+                    headers: {
+                        'RequestVerificationToken': document.querySelector('input[name="__RequestVerificationToken"]').value // Gửi AntiForgeryToken
+                    }
+                });
+
+                if (response.ok) {
+                    const result = await response.json();
+                    if (result.success) {
+                        resendMessage.textContent = 'Mã mới đã được gửi!';
+                        resendMessage.style.display = 'inline';
+                        timeLeft = 60; // Reset bộ đếm về 60 giây
+                        countdownElement.textContent = 'Mã sẽ hết hạn trong ' + timeLeft + ' giây.';
+                        resendButton.disabled = true; // Vô hiệu hóa lại
+                        clearInterval(countdownInterval); // Dừng bộ đếm cũ
+                        countdownInterval = setInterval(updateCountdown, 1000); // Bắt đầu bộ đếm mới
+                        updateCountdown(); // Cập nhật ngay lập tức
+                    } else {
+                        resendMessage.textContent = result.message || 'Không thể gửi lại mã. Vui lòng thử lại.';
+                        resendMessage.style.display = 'inline';
+                        resendButton.disabled = false; // Kích hoạt lại nút nếu có lỗi
+                    }
+                } else {
+                    resendMessage.textContent = 'Lỗi hệ thống khi gửi lại mã.';
+                    resendMessage.style.display = 'inline';
+                    resendButton.disabled = false;
+                }
+            } catch (error) {
+                console.error('Error resending code:', error);
+                resendMessage.textContent = 'Lỗi kết nối khi gửi lại mã.';
+                resendMessage.style.display = 'inline';
+                resendButton.disabled = false;
+            }
+        });
+
+    </script>
+}

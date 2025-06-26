@@ -1,0 +1,248 @@
+﻿@using WebThoiTrang.Models.Entity
+@model WebThoiTrang.Models.ProductListVm
+
+@{
+    ViewData["Title"] = "Tất cả sản phẩm";
+    var selectedCategoryId = Model.CategoryId?.ToString() ?? "all";
+    var selectedSort       = Model.SortOrder ?? "relevance";
+}
+
+<div class="container py-3"> @* Đổi từ container-fluid thành container để giới hạn độ rộng và căn giữa *@
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb mb-3">
+            <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">All </li>
+        </ol>
+    </nav>
+
+    <div class="row gx-4">
+        @* Bộ lọc được đưa lên trên phần hiển thị sản phẩm chính *@
+        <div class="col-12 mb-4"> @* Sử dụng col-12 để bộ lọc chiếm toàn bộ chiều rộng có sẵn *@
+            <h5 class="fw-semibold mb-3 d-none d-md-block">Bộ lọc</h5> @* Chỉ hiển thị tiêu đề bộ lọc trên màn hình lớn nếu cần *@
+            <form id="topFilterForm" method="get" asp-controller="Product" asp-action="Index" class="d-flex flex-wrap align-items-center gap-3">
+                <div class="d-flex gap-2 align-items-center">
+                    <label for="CategoryId" class="form-label mb-0 fw-medium">Danh mục:</label>
+                    <select id="CategoryId" name="categoryId" class="form-select w-auto" onchange="this.form.submit()">
+                        <option value="all" selected="@(selectedCategoryId == "all")">Tất cả</option>
+                        @foreach (var c in Model.Categories)
+                        {
+                            <option value="@c.Id" selected="@(selectedCategoryId == c.Id.ToString())">@c.Name</option>
+                        }
+                    </select>
+                </div>
+
+                <div class="d-flex gap-2 align-items-center">
+                    <label for="priceFilter" class="form-label mb-0 fw-medium">Khoảng giá:</label>
+                    <select id="priceFilter" name="priceRange" class="form-select w-auto" onchange="this.form.submit()">
+                        <option value="all" selected="@(Model.PriceRange == "all" || Model.PriceRange == null)">Tất cả</option>
+                        <option value="lt100" selected="@(Model.PriceRange == "lt100")">Dưới 100.000 VND</option>
+                        <option value="100-300" selected="@(Model.PriceRange == "100-300")">100.000 - 300.000 VND</option>
+                        <option value="300-600" selected="@(Model.PriceRange == "300-600")">300.000 - 600.000 VND</option>
+                        <option value="gt600" selected="@(Model.PriceRange == "gt600")">Trên 600.000 VND</option>
+                    </select>
+                </div>
+
+                <div class="d-flex gap-2 align-items-center ms-md-auto"> @* ms-md-auto để đẩy sắp xếp sang phải trên màn hình md trở lên *@
+                    <label for="sortSelect" class="form-label mb-0 fw-medium">Sắp xếp theo:</label>
+                    <select id="sortSelect" class="form-select w-auto" onchange="this.form.submit()"> @* Thay đổi onchange để submit form *@
+                        <option value="relevance" selected="@(selectedSort == "relevance")">Sự liên quan</option>
+                        <option value="price-asc" selected="@(selectedSort == "price-asc")">Giá tăng dần</option>
+                        <option value="price-desc" selected="@(selectedSort == "price-desc")">Giá giảm dần</option>
+                        <option value="date-desc" selected="@(selectedSort == "date-desc")">Mới nhất</option>
+                        <option value="date-asc" selected="@(selectedSort == "date-asc")">Cũ nhất</option>
+                    </select>
+                </div>
+            </form>
+        </div>
+
+        <main class="col-12"> @* main sẽ chiếm toàn bộ chiều rộng có sẵn trong container *@
+            @if (!Model.Products.Any())
+            {
+                <p class="text-muted">Không tìm thấy sản phẩm phù hợp.</p>
+            }
+            else
+            {
+                <div class="row row-cols-2 row-cols-sm-3 row-cols-lg-4 g-4 mb-4">
+                    @foreach (var p in Model.Products)
+                    {
+                        <div class="col">
+                            <div class="product-card">
+                                <div class="product-image-wrapper">
+                                    <img src="@p.MainImage" alt="@p.Name" class="img-fluid rounded product-image">
+                                    <div class="product-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center opacity-0">
+                                        <a href="@Url.Action("Details", "Product", new { id = p.Id })"
+                                           class="btn btn-light">Xem chi tiết</a>
+                                    </div>
+                                </div>
+                                <div class="product-info mt-3">
+                                    <h6>@p.Name</h6>
+                                    <p class="price text-danger fw-bold">
+                                        @string.Format(new System.Globalization.CultureInfo("vi-VN"), "{0:C0}", p.Price)
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+
+                <nav class="pagination-wrapper" aria-label="Pagination">
+                    <ul class="pagination justify-content-center">
+                        <li class="page-item @(Model.CurrentPage == 1 ? "disabled" : "")">
+                            <a class="page-link"
+                               asp-action="Index"
+                               asp-route-page="@(Model.CurrentPage - 1)"
+                               asp-route-categoryId="@(Model.CategoryId)"
+                               asp-route-priceRange="@(Model.PriceRange)" @* Thêm priceRange vào route của phân trang *@
+                               asp-route-sortOrder="@(Model.SortOrder)">«</a>
+                        </li>
+
+                        @for (int i = 1; i <= Model.TotalPages; i++)
+                        {
+                            <li class="page-item @(i == Model.CurrentPage ? "active" : "")">
+                                <a class="page-link"
+                                   asp-action="Index"
+                                   asp-route-page="@i"
+                                   asp-route-categoryId="@(Model.CategoryId)"
+                                   asp-route-priceRange="@(Model.PriceRange)" @* Thêm priceRange vào route của phân trang *@
+                                   asp-route-sortOrder="@(Model.SortOrder)">@i</a>
+                            </li>
+                        }
+
+                        <li class="page-item @(Model.CurrentPage == Model.TotalPages ? "disabled" : "")">
+                            <a class="page-link"
+                               asp-action="Index"
+                               asp-route-page="@(Model.CurrentPage + 1)"
+                               asp-route-categoryId="@(Model.CategoryId)"
+                               asp-route-priceRange="@(Model.PriceRange)" @* Thêm priceRange vào route của phân trang *@
+                               asp-route-sortOrder="@(Model.SortOrder)">»</a>
+                        </li>
+                    </ul>
+                </nav>
+            }
+        </main>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        // Không cần slider giá realtime nếu bạn dùng select box cho khoảng giá
+        // Đoạn script này có thể bỏ đi nếu bạn đã chuyển sang select box hoàn toàn
+        // Tuy nhiên, nếu bạn vẫn muốn giữ cho các mục filter submit form khi thay đổi,
+        // thì script này không cần thiết vì bạn đã có onchange="this.form.submit()"
+        // trên các thẻ <select>
+    </script>
+}
+
+<style>
+/* CSS CẬP NHẬT */
+
+/* Card tổng thể */
+.product-card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    height: 100%;
+}
+
+.product-card {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Wrapper hình ảnh và lớp phủ */
+.product-image-wrapper {
+    position: relative;
+    overflow: hidden;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.product-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: filter 0.3s ease;
+}
+
+/* Lớp phủ (overlay) */
+.product-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: background-color 0.3s ease, opacity 0.3s ease;
+    pointer-events: none;
+    cursor: pointer;
+}
+
+/* When hovering over the product-card */
+.product-card:hover .product-image {
+    filter: blur(3px);
+}
+
+.product-card:hover .product-overlay {
+    opacity: 1;
+    background-color: rgba(0, 0, 0, 0.5);
+    pointer-events: auto;
+}
+
+/* The button inside the overlay will handle its own visibility */
+.product-overlay .btn {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.product-card:hover .product-overlay .btn {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Phần body của card (thông tin sản phẩm) */
+.product-info {
+    padding: 1rem;
+}
+
+.product-name {
+    font-size: 1.05em;
+    color: #333;
+    line-height: 1.4;
+    min-height: 2.8em;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-weight: 500;
+}
+
+.product-price {
+    font-size: 1.2em;
+    color: #e74c3c;
+    margin-top: 0.5rem;
+}
+
+/* Thêm CSS để căn giữa nội dung chính và tạo khoảng trống 2 bên */
+/* Điều này đã được xử lý bằng cách sử dụng .container thay vì .container-fluid */
+/* Nếu muốn rộng hơn nhưng vẫn căn giữa, có thể dùng .container-xl */
+/* .container {
+    max-width: 1200px; // Ví dụ, điều chỉnh độ rộng tối đa nếu bạn không muốn dùng container-xl
+    margin-left: auto;
+    margin-right: auto;
+} */
+</style>

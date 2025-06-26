@@ -1,0 +1,106 @@
+﻿@using WebThoiTrang.Models.Entity
+@{
+    ViewData["Title"] = "Thử đồ AI - Tải ảnh của bạn";
+    int productId = ViewBag.ProductId;
+    string productMainImage = ViewBag.ProductMainImage;
+    string productName = ViewBag.ProductName;
+    // LẤY ĐƯỜNG DẪN ẢNH USER TỪ ViewBag
+    string uploadedUserImagePath = ViewBag.UploadedUserImagePath;
+    string uploadedUserImageMessage = ViewBag.UploadedUserImageMessage;
+
+    // Lấy thông báo từ TempData được chuyển qua ViewBag
+    string errorMessage = ViewBag.ErrorMessage;
+    string message = ViewBag.Message;
+}
+@section Scripts {
+    <script>
+        // Đảm bảo không có dữ liệu productId cũ cho form AI trên trang này
+        localStorage.removeItem('form_aiTryOnForm');
+        // Nếu bạn không chắc chắn về ID, có thể thêm kiểm tra và xóa chung hơn.
+        // Ví dụ: if (window.location.pathname.includes('/ImageGenerator/')) { localStorage.clear(); }
+        // NHƯNG HÃY CẨN THẬN VỚI localStorage.clear() vì nó xóa tất cả dữ liệu.
+
+        // ... các script khác của trang này ...
+    </script>
+        // ... các script bạn đã có cho search suggestions ...
+}
+
+<div class="container my-5">
+    <div class="text-center mb-4">
+        <h1>Thử đồ AI</h1>
+        <p class="lead">Bạn đang thử sản phẩm: <strong>@productName</strong></p>
+
+        <div class="row justify-content-center mb-3">
+            <div class="col-md-4">
+                <h5>Ảnh Sản Phẩm</h5>
+                @if (!string.IsNullOrEmpty(productMainImage))
+                {
+                    <img src="@productMainImage" alt="Ảnh sản phẩm được chọn" class="img-thumbnail" style="max-width: 100%; height: auto;" />
+                }
+                else
+                {
+                    <p>Không có ảnh sản phẩm.</p>
+                }
+            </div>
+            <div class="col-md-4">
+                <h5>Ảnh Người Dùng</h5>
+                @if (!string.IsNullOrEmpty(uploadedUserImagePath))
+                {
+                    <img src="/@uploadedUserImagePath" alt="Ảnh người dùng đã tải lên" class="img-thumbnail" style="max-width: 100%; height: auto;" />
+                    <p class="text-success mt-2">@uploadedUserImageMessage</p>
+                }
+                else
+                {
+                    <p>Chưa có ảnh người dùng được tải lên.</p>
+                }
+            </div>
+        </div>
+
+        <p>Vui lòng tải lên ảnh toàn thân của bạn để xem sản phẩm này trông như thế nào trên người bạn.</p>
+    </div>
+
+    @if (!string.IsNullOrEmpty(errorMessage))
+    {
+        <div class="alert alert-danger text-center">@errorMessage</div>
+    }
+    @if (!string.IsNullOrEmpty(message))
+    {
+        <div class="alert alert-success text-center">@message</div>
+    }
+
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card p-4 shadow-sm">
+                <form asp-controller="ImageGenerator" asp-action="Generate" method="post" enctype="multipart/form-data" **id="aiTryOnForm" **>
+                    <input type="hidden" name="productId" value="@productId" />
+
+                    <div class="mb-3">
+                        <label for="userImage" class="form-label">Chọn ảnh người dùng của bạn:</label>
+                        <input type="file" class="form-control" id="userImage" name="userImage" accept="image/*" required>
+                    </div>
+
+                    <div class="d-grid gap-2">
+                        <button type="submit" class="btn btn-primary btn-lg">
+                            <i class="fas fa-upload me-2"></i> Tải ảnh người dùng lên
+                        </button>
+                        <a asp-controller="Product" asp-action="Details" asp-route-id="@productId" class="btn btn-secondary mt-2">
+                            <i class="fas fa-arrow-left me-2"></i> Quay lại chi tiết sản phẩm
+                        </a>
+                    </div>
+                </form>
+
+                @if (!string.IsNullOrEmpty(uploadedUserImagePath))
+                {
+                    <form method="post" asp-action="ProcessAndShowResult" asp-controller="ImageGenerator">
+                        <input type="hidden" name="productId" value="@ViewBag.ProductId" />
+                        <input type="hidden" name="userImageRelativePath" value="@ViewBag.UploadedUserImagePath" />
+                        <button type="submit" class="btn btn-success btn-lg mt-3">
+                            <i class="fas fa-magic me-2"></i> Bắt đầu thử đồ AI
+                        </button>
+                    </form>
+
+                }
+            </div>
+        </div>
+    </div>
+</div>

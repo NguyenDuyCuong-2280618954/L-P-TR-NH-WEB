@@ -1,0 +1,217 @@
+﻿@model ProductViewModel
+
+@{
+    ViewData["Title"] = $"Product #{Model.Product.Id}";
+    var images = Model.Product.Images?.ToList() ?? new List<WebThoiTrang.Models.Entity.ProductImage>();
+    var mainImageUrl = Model.Product.MainImage ?? images.FirstOrDefault()?.Url;
+}
+
+<div class="container my-4">
+
+    <!-- 🔗 Breadcrumb -->
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">Home</a></li>
+            <li class="breadcrumb-item"><a asp-controller="Product" asp-action="Index">All Products</a></li>
+            <li class="breadcrumb-item active">@Model.Product.Name</li>
+        </ol>
+    </nav>
+
+    <div class="row">
+        <!-- 📷 IMAGE GALLERY -->
+        <div class="col-lg-7">
+            <div class="product-images">
+                <div class="main-image mb-3 position-relative text-center">
+                    <img id="mainImage"
+                         src="@mainImageUrl"
+                         alt="@Model.Product.Name"
+                         class="img-fluid rounded"
+                         style="max-height:500px;width:100%;object-fit:contain;transition:opacity .3s ease;" />
+                </div>
+
+                <div class="thumbnail-images d-flex justify-content-center gap-2 flex-wrap">
+                    @foreach (var img in images)
+                    {
+                        <img src="@img.Url"
+                             data-full="@img.Url"
+                             alt="@Model.Product.Name"
+                             class="img-thumbnail thumbnail-image @(img.Url == mainImageUrl ? "active border-primary" : "")"
+                             style="width:80px;height:80px;object-fit:cover;cursor:pointer;"
+                             onclick="changeMainImage('@img.Url')" />
+                    }
+                </div>
+            </div>
+        </div>
+
+        <!-- 📝 PRODUCT INFO -->
+        <div class="col-lg-5">
+            <div class="product-info">
+                <p class="text-muted mb-1">LEVENTS ASIA</p>
+                <h1 class="h3 mb-3">@Model.Product.Name</h1>
+                <p class="h4 text-danger mb-4">@Model.Product.Price.ToString("N0") VND</p>
+
+                <!-- Voucher -->
+                <div class="voucher-section mb-4 p-3 bg-light rounded">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <span><i class="fas fa-ticket-alt me-2"></i>Voucher của Levents</span>
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+                </div>
+
+                <!-- Color -->
+                <div class="color-selection mb-4">
+                    <label class="form-label fw-bold">Color</label>
+                    <div class="d-flex gap-2">
+                        <div class="color-option selected" data-color="@Model.Product.Color">
+                            <div class="color-swatch rounded" style="width:40px;height:40px; background-color:@Model.Product.Color.ToLower(); border: 1px solid #ccc;"></div>
+                            <small class="d-block text-center mt-1">@Model.Product.Color</small>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Size -->
+                <div class="size-selection mb-4">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <label class="form-label fw-bold">Size</label>
+                        <a href="#" class="text-decoration-none small">Bảng size</a>
+                    </div>
+                    <div class="d-flex gap-2 flex-wrap">
+                        @foreach (var size in Model.Product.Sizes)
+                        {
+                            <button type="button" class="btn btn-outline-dark size-btn" data-size="@size">@size</button>
+                        }
+                    </div>
+                    <div id="sizeWarning" class="text-danger mt-2" style="display:none;">
+                        Vui lòng chọn size trước khi thêm vào giỏ hàng hoặc mua.
+                    </div>
+                </div>
+
+                <!-- Quantity -->
+                <div class="quantity-selection mb-4">
+                    <label class="form-label fw-bold">Số lượng</label>
+                    <div class="d-flex align-items-center gap-3">
+                        <div class="quantity-controls d-flex align-items-center border rounded">
+                            <button type="button" class="btn btn-sm" onclick="decreaseQuantity()"><i class="fas fa-minus"></i></button>
+                            <input type="number" class="form-control border-0 text-center" id="quantity" value="1" min="1" style="width:60px;">
+                            <button type="button" class="btn btn-sm" onclick="increaseQuantity()"><i class="fas fa-plus"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="action-buttons mb-4">
+
+                    <!-- Thử đồ -->
+                    <a asp-controller="ImageGenerator" asp-action="Index" asp-route-productId="@Model.Product.Id" class="btn btn-success w-100 mb-2">
+                        <i class="fas fa-magic me-2"></i> Thử đồ AI với sản phẩm này
+                    </a>
+
+                    <form asp-controller="ShoppingCart" asp-action="AddToCart" method="get" id="addToCartForm">
+
+                        <input type="hidden" name="productId" value="@Model.Product.Id" />
+                        <input type="hidden" name="quantity" id="selectedQuantity" value="1" />
+                        <input type="hidden" name="size" id="selectedSize" value="" />
+                        <input type="hidden" name="color" value="@Model.Product.Color" />
+                        <button type="submit" class="btn btn-outline-secondary w-100 mb-2">
+                            <i class="fas fa-heart me-2"></i> Thêm vào giỏ hàng
+                        </button>
+                    </form>
+                    <button class="btn btn-dark w-100" onclick="buyNow()">Mua ngay</button>
+                </div>
+
+                <!-- Features -->
+                <div class="product-features">
+                    <div class="feature-item d-flex align-items-center mb-2"><i class="fas fa-shipping-fast me-3 text-primary"></i><span>Miễn phí vận chuyển đơn hàng từ 500k</span></div>
+                    <div class="feature-item d-flex align-items-center mb-2"><i class="fas fa-undo me-3 text-primary"></i><span>Đổi trả trong 7 ngày</span></div>
+                    <div class="feature-item d-flex align-items-center"><i class="fas fa-certificate me-3 text-primary"></i><span>Chính hãng 100%</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Description -->
+    <div class="row mt-5">
+        <div class="col-12">
+            <h3 class="mb-3">Thông tin sản phẩm</h3>
+            <p>@Model.Product.Description</p>
+        </div>
+    </div>
+
+    <!-- Related Products -->
+    @if (Model.RelatedProducts.Any())
+    {
+        <div class="row mt-5">
+            <div class="col-12"><h3 class="mb-4">Sản phẩm liên quan</h3></div>
+            @foreach (var product in Model.RelatedProducts)
+            {
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="product-card text-center">
+                        <a asp-action="Details" asp-controller="Product" asp-route-id="@product.Id">
+                            <img src="@product.MainImage" alt="@product.Name" class="img-fluid rounded mb-2">
+                        </a>
+                        <h6 class="product-name"><a asp-action="Details" asp-controller="Product" asp-route-id="@product.Id" class="text-decoration-none text-dark">@product.Name</a></h6>
+                        <p class="text-danger fw-bold">@product.Price.ToString("N0") VND</p>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+</div>
+
+@section Styles {
+    <style>
+        .thumbnail-image.active {
+            border: 2px solid #0d6efd;
+        }
+
+        .thumbnail-images {
+            overflow-x: auto;
+            padding-bottom: .25rem;
+        }
+    </style>
+}
+
+@section Scripts {
+     
+    <script>
+        let selectedSize = "";
+
+        // Khi click vào size button
+        document.querySelectorAll(".size-btn").forEach(btn => {
+            btn.addEventListener("click", function () {
+                selectedSize = this.getAttribute("data-size");
+                document.getElementById("selectedSize").value = selectedSize;
+
+                // Đổi màu nút được chọn
+                document.querySelectorAll(".size-btn").forEach(b => b.classList.remove("btn-dark"));
+                this.classList.add("btn-dark");
+
+                // Ẩn cảnh báo nếu đã chọn size
+                const warning = document.getElementById("sizeWarning");
+                if (warning) warning.style.display = "none";
+            });
+        });
+
+        // Ngăn form nếu chưa chọn size
+        document.getElementById("addToCartForm").addEventListener("submit", function (e) {
+            if (!selectedSize) {
+                e.preventDefault();
+                const warning = document.getElementById("sizeWarning");
+                if (warning) warning.style.display = "block";
+
+                // Scroll tới size selection
+                document.querySelector(".size-selection").scrollIntoView({ behavior: "smooth", block: "center" });
+            }
+        });
+
+        function changeMainImage(imageSrc){
+            const mainImg = document.getElementById('mainImage');
+            if(mainImg && imageSrc && mainImg.src !== imageSrc){
+                mainImg.src = imageSrc;
+            }
+
+            document.querySelectorAll('.thumbnail-image')
+                    .forEach(t=>t.classList.toggle('active', t.getAttribute('src') === imageSrc));
+        }
+    </script>
+}

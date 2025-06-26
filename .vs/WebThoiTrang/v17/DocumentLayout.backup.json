@@ -1,0 +1,955 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\L\u1EADp Tr\u00ECnh Web\\\u0110\u1ED3 \u00E1n\\WebThoiTrang\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{CDC90D2B-B87C-4BDE-A6CB-DE453EAE124F}|WebThoiTrang\\WebThoiTrang.csproj|e:\\l\u1EADp tr\u00ECnh web\\\u0111\u1ED3 \u00E1n\\webthoitrang\\webthoitrang\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CDC90D2B-B87C-4BDE-A6CB-DE453EAE124F}|WebThoiTrang\\WebThoiTrang.csproj|solutionrelative:webthoitrang\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CDC90D2B-B87C-4BDE-A6CB-DE453EAE124F}|WebThoiTrang\\WebThoiTrang.csproj|e:\\l\u1EADp tr\u00ECnh web\\\u0111\u1ED3 \u00E1n\\webthoitrang\\webthoitrang\\wwwroot\\images\\banner\\banner.jpg||{58961B49-13E0-48C0-9258-13CBC4D40279}",
+      "RelativeMoniker": "D:0:0:{CDC90D2B-B87C-4BDE-A6CB-DE453EAE124F}|WebThoiTrang\\WebThoiTrang.csproj|solutionrelative:webthoitrang\\wwwroot\\images\\banner\\banner.jpg||{58961B49-13E0-48C0-9258-13CBC4D40279}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CDC90D2B-B87C-4BDE-A6CB-DE453EAE124F}|WebThoiTrang\\WebThoiTrang.csproj|e:\\l\u1EADp tr\u00ECnh web\\\u0111\u1ED3 \u00E1n\\webthoitrang\\webthoitrang\\views\\collection\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CDC90D2B-B87C-4BDE-A6CB-DE453EAE124F}|WebThoiTrang\\WebThoiTrang.csproj|solutionrelative:webthoitrang\\views\\collection\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CDC90D2B-B87C-4BDE-A6CB-DE453EAE124F}|WebThoiTrang\\WebThoiTrang.csproj|e:\\l\u1EADp tr\u00ECnh web\\\u0111\u1ED3 \u00E1n\\webthoitrang\\webthoitrang\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CDC90D2B-B87C-4BDE-A6CB-DE453EAE124F}|WebThoiTrang\\WebThoiTrang.csproj|solutionrelative:webthoitrang\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CDC90D2B-B87C-4BDE-A6CB-DE453EAE124F}|WebThoiTrang\\WebThoiTrang.csproj|e:\\l\u1EADp tr\u00ECnh web\\\u0111\u1ED3 \u00E1n\\webthoitrang\\webthoitrang\\models\\collectionlistvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CDC90D2B-B87C-4BDE-A6CB-DE453EAE124F}|WebThoiTrang\\WebThoiTrang.csproj|solutionrelative:webthoitrang\\models\\collectionlistvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CDC90D2B-B87C-4BDE-A6CB-DE453EAE124F}|WebThoiTrang\\WebThoiTrang.csproj|e:\\l\u1EADp tr\u00ECnh web\\\u0111\u1ED3 \u00E1n\\webthoitrang\\webthoitrang\\models\\cartitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CDC90D2B-B87C-4BDE-A6CB-DE453EAE124F}|WebThoiTrang\\WebThoiTrang.csproj|solutionrelative:webthoitrang\\models\\cartitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\L\u1EADp Tr\u00ECnh Web\\\u0110\u1ED3 \u00E1n\\WebThoiTrang\\WebThoiTrang\\Migrations\\20250626034022_FixCollectionProductRelation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:WebThoiTrang\\Migrations\\20250626034022_FixCollectionProductRelation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CDC90D2B-B87C-4BDE-A6CB-DE453EAE124F}|WebThoiTrang\\WebThoiTrang.csproj|e:\\l\u1EADp tr\u00ECnh web\\\u0111\u1ED3 \u00E1n\\webthoitrang\\webthoitrang\\models\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CDC90D2B-B87C-4BDE-A6CB-DE453EAE124F}|WebThoiTrang\\WebThoiTrang.csproj|solutionrelative:webthoitrang\\models\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CDC90D2B-B87C-4BDE-A6CB-DE453EAE124F}|WebThoiTrang\\WebThoiTrang.csproj|e:\\l\u1EADp tr\u00ECnh web\\\u0111\u1ED3 \u00E1n\\webthoitrang\\webthoitrang\\models\\entity\\applicationuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CDC90D2B-B87C-4BDE-A6CB-DE453EAE124F}|WebThoiTrang\\WebThoiTrang.csproj|solutionrelative:webthoitrang\\models\\entity\\applicationuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CDC90D2B-B87C-4BDE-A6CB-DE453EAE124F}|WebThoiTrang\\WebThoiTrang.csproj|e:\\l\u1EADp tr\u00ECnh web\\\u0111\u1ED3 \u00E1n\\webthoitrang\\webthoitrang\\models\\entity\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CDC90D2B-B87C-4BDE-A6CB-DE453EAE124F}|WebThoiTrang\\WebThoiTrang.csproj|solutionrelative:webthoitrang\\models\\entity\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CDC90D2B-B87C-4BDE-A6CB-DE453EAE124F}|WebThoiTrang\\WebThoiTrang.csproj|e:\\l\u1EADp tr\u00ECnh web\\\u0111\u1ED3 \u00E1n\\webthoitrang\\webthoitrang\\models\\entity\\collection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CDC90D2B-B87C-4BDE-A6CB-DE453EAE124F}|WebThoiTrang\\WebThoiTrang.csproj|solutionrelative:webthoitrang\\models\\entity\\collection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CDC90D2B-B87C-4BDE-A6CB-DE453EAE124F}|WebThoiTrang\\WebThoiTrang.csproj|e:\\l\u1EADp tr\u00ECnh web\\\u0111\u1ED3 \u00E1n\\webthoitrang\\webthoitrang\\controllers\\collectioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CDC90D2B-B87C-4BDE-A6CB-DE453EAE124F}|WebThoiTrang\\WebThoiTrang.csproj|solutionrelative:webthoitrang\\controllers\\collectioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CDC90D2B-B87C-4BDE-A6CB-DE453EAE124F}|WebThoiTrang\\WebThoiTrang.csproj|e:\\l\u1EADp tr\u00ECnh web\\\u0111\u1ED3 \u00E1n\\webthoitrang\\webthoitrang\\models\\entity\\emailconfirmations.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CDC90D2B-B87C-4BDE-A6CB-DE453EAE124F}|WebThoiTrang\\WebThoiTrang.csproj|solutionrelative:webthoitrang\\models\\entity\\emailconfirmations.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CDC90D2B-B87C-4BDE-A6CB-DE453EAE124F}|WebThoiTrang\\WebThoiTrang.csproj|e:\\l\u1EADp tr\u00ECnh web\\\u0111\u1ED3 \u00E1n\\webthoitrang\\webthoitrang\\controllers\\imagecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CDC90D2B-B87C-4BDE-A6CB-DE453EAE124F}|WebThoiTrang\\WebThoiTrang.csproj|solutionrelative:webthoitrang\\controllers\\imagecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CDC90D2B-B87C-4BDE-A6CB-DE453EAE124F}|WebThoiTrang\\WebThoiTrang.csproj|e:\\l\u1EADp tr\u00ECnh web\\\u0111\u1ED3 \u00E1n\\webthoitrang\\webthoitrang\\models\\checkoutviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CDC90D2B-B87C-4BDE-A6CB-DE453EAE124F}|WebThoiTrang\\WebThoiTrang.csproj|solutionrelative:webthoitrang\\models\\checkoutviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CDC90D2B-B87C-4BDE-A6CB-DE453EAE124F}|WebThoiTrang\\WebThoiTrang.csproj|e:\\l\u1EADp tr\u00ECnh web\\\u0111\u1ED3 \u00E1n\\webthoitrang\\webthoitrang\\controllers\\imagegeneratorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CDC90D2B-B87C-4BDE-A6CB-DE453EAE124F}|WebThoiTrang\\WebThoiTrang.csproj|solutionrelative:webthoitrang\\controllers\\imagegeneratorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CDC90D2B-B87C-4BDE-A6CB-DE453EAE124F}|WebThoiTrang\\WebThoiTrang.csproj|e:\\l\u1EADp tr\u00ECnh web\\\u0111\u1ED3 \u00E1n\\webthoitrang\\webthoitrang\\controllers\\shoppingcartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CDC90D2B-B87C-4BDE-A6CB-DE453EAE124F}|WebThoiTrang\\WebThoiTrang.csproj|solutionrelative:webthoitrang\\controllers\\shoppingcartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CDC90D2B-B87C-4BDE-A6CB-DE453EAE124F}|WebThoiTrang\\WebThoiTrang.csproj|e:\\l\u1EADp tr\u00ECnh web\\\u0111\u1ED3 \u00E1n\\webthoitrang\\webthoitrang\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CDC90D2B-B87C-4BDE-A6CB-DE453EAE124F}|WebThoiTrang\\WebThoiTrang.csproj|solutionrelative:webthoitrang\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\L\u1EADp Tr\u00ECnh Web\\\u0110\u1ED3 \u00E1n\\WebThoiTrang\\WebThoiTrang\\Migrations\\20250626031835_UpdateCollection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:WebThoiTrang\\Migrations\\20250626031835_UpdateCollection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CDC90D2B-B87C-4BDE-A6CB-DE453EAE124F}|WebThoiTrang\\WebThoiTrang.csproj|e:\\l\u1EADp tr\u00ECnh web\\\u0111\u1ED3 \u00E1n\\webthoitrang\\webthoitrang\\models\\productlistvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CDC90D2B-B87C-4BDE-A6CB-DE453EAE124F}|WebThoiTrang\\WebThoiTrang.csproj|solutionrelative:webthoitrang\\models\\productlistvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CDC90D2B-B87C-4BDE-A6CB-DE453EAE124F}|WebThoiTrang\\WebThoiTrang.csproj|e:\\l\u1EADp tr\u00ECnh web\\\u0111\u1ED3 \u00E1n\\webthoitrang\\webthoitrang\\models\\entity\\productimage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CDC90D2B-B87C-4BDE-A6CB-DE453EAE124F}|WebThoiTrang\\WebThoiTrang.csproj|solutionrelative:webthoitrang\\models\\entity\\productimage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CDC90D2B-B87C-4BDE-A6CB-DE453EAE124F}|WebThoiTrang\\WebThoiTrang.csproj|e:\\l\u1EADp tr\u00ECnh web\\\u0111\u1ED3 \u00E1n\\webthoitrang\\webthoitrang\\views\\product\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CDC90D2B-B87C-4BDE-A6CB-DE453EAE124F}|WebThoiTrang\\WebThoiTrang.csproj|solutionrelative:webthoitrang\\views\\product\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CDC90D2B-B87C-4BDE-A6CB-DE453EAE124F}|WebThoiTrang\\WebThoiTrang.csproj|e:\\l\u1EADp tr\u00ECnh web\\\u0111\u1ED3 \u00E1n\\webthoitrang\\webthoitrang\\views\\product\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CDC90D2B-B87C-4BDE-A6CB-DE453EAE124F}|WebThoiTrang\\WebThoiTrang.csproj|solutionrelative:webthoitrang\\views\\product\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CDC90D2B-B87C-4BDE-A6CB-DE453EAE124F}|WebThoiTrang\\WebThoiTrang.csproj|e:\\l\u1EADp tr\u00ECnh web\\\u0111\u1ED3 \u00E1n\\webthoitrang\\webthoitrang\\views\\imagegenerator\\result.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CDC90D2B-B87C-4BDE-A6CB-DE453EAE124F}|WebThoiTrang\\WebThoiTrang.csproj|solutionrelative:webthoitrang\\views\\imagegenerator\\result.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CDC90D2B-B87C-4BDE-A6CB-DE453EAE124F}|WebThoiTrang\\WebThoiTrang.csproj|e:\\l\u1EADp tr\u00ECnh web\\\u0111\u1ED3 \u00E1n\\webthoitrang\\webthoitrang\\views\\imagegenerator\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CDC90D2B-B87C-4BDE-A6CB-DE453EAE124F}|WebThoiTrang\\WebThoiTrang.csproj|solutionrelative:webthoitrang\\views\\imagegenerator\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CDC90D2B-B87C-4BDE-A6CB-DE453EAE124F}|WebThoiTrang\\WebThoiTrang.csproj|e:\\l\u1EADp tr\u00ECnh web\\\u0111\u1ED3 \u00E1n\\webthoitrang\\webthoitrang\\services\\tryonjobservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CDC90D2B-B87C-4BDE-A6CB-DE453EAE124F}|WebThoiTrang\\WebThoiTrang.csproj|solutionrelative:webthoitrang\\services\\tryonjobservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CDC90D2B-B87C-4BDE-A6CB-DE453EAE124F}|WebThoiTrang\\WebThoiTrang.csproj|e:\\l\u1EADp tr\u00ECnh web\\\u0111\u1ED3 \u00E1n\\webthoitrang\\webthoitrang\\services\\imageprocessingservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CDC90D2B-B87C-4BDE-A6CB-DE453EAE124F}|WebThoiTrang\\WebThoiTrang.csproj|solutionrelative:webthoitrang\\services\\imageprocessingservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CDC90D2B-B87C-4BDE-A6CB-DE453EAE124F}|WebThoiTrang\\WebThoiTrang.csproj|e:\\l\u1EADp tr\u00ECnh web\\\u0111\u1ED3 \u00E1n\\webthoitrang\\webthoitrang\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CDC90D2B-B87C-4BDE-A6CB-DE453EAE124F}|WebThoiTrang\\WebThoiTrang.csproj|solutionrelative:webthoitrang\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CDC90D2B-B87C-4BDE-A6CB-DE453EAE124F}|WebThoiTrang\\WebThoiTrang.csproj|e:\\l\u1EADp tr\u00ECnh web\\\u0111\u1ED3 \u00E1n\\webthoitrang\\webthoitrang\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{CDC90D2B-B87C-4BDE-A6CB-DE453EAE124F}|WebThoiTrang\\WebThoiTrang.csproj|solutionrelative:webthoitrang\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CDC90D2B-B87C-4BDE-A6CB-DE453EAE124F}|WebThoiTrang\\WebThoiTrang.csproj|e:\\l\u1EADp tr\u00ECnh web\\\u0111\u1ED3 \u00E1n\\webthoitrang\\webthoitrang\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CDC90D2B-B87C-4BDE-A6CB-DE453EAE124F}|WebThoiTrang\\WebThoiTrang.csproj|solutionrelative:webthoitrang\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CDC90D2B-B87C-4BDE-A6CB-DE453EAE124F}|WebThoiTrang\\WebThoiTrang.csproj|e:\\l\u1EADp tr\u00ECnh web\\\u0111\u1ED3 \u00E1n\\webthoitrang\\webthoitrang\\views\\shared\\_validationscriptspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CDC90D2B-B87C-4BDE-A6CB-DE453EAE124F}|WebThoiTrang\\WebThoiTrang.csproj|solutionrelative:webthoitrang\\views\\shared\\_validationscriptspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CDC90D2B-B87C-4BDE-A6CB-DE453EAE124F}|WebThoiTrang\\WebThoiTrang.csproj|e:\\l\u1EADp tr\u00ECnh web\\\u0111\u1ED3 \u00E1n\\webthoitrang\\webthoitrang\\wwwroot\\js\\site.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{CDC90D2B-B87C-4BDE-A6CB-DE453EAE124F}|WebThoiTrang\\WebThoiTrang.csproj|solutionrelative:webthoitrang\\wwwroot\\js\\site.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CDC90D2B-B87C-4BDE-A6CB-DE453EAE124F}|WebThoiTrang\\WebThoiTrang.csproj|e:\\l\u1EADp tr\u00ECnh web\\\u0111\u1ED3 \u00E1n\\webthoitrang\\webthoitrang\\services\\emailsender.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CDC90D2B-B87C-4BDE-A6CB-DE453EAE124F}|WebThoiTrang\\WebThoiTrang.csproj|solutionrelative:webthoitrang\\services\\emailsender.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\L\u1EADp Tr\u00ECnh Web\\\u0110\u1ED3 \u00E1n\\WebThoiTrang\\WebThoiTrang\\Migrations\\20250625200712_AddNewProduct.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:WebThoiTrang\\Migrations\\20250625200712_AddNewProduct.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\L\u1EADp Tr\u00ECnh Web\\\u0110\u1ED3 \u00E1n\\WebThoiTrang\\WebThoiTrang\\Migrations\\20250625195525_AddCollectionAndSeedData.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:WebThoiTrang\\Migrations\\20250625195525_AddCollectionAndSeedData.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\L\u1EADp Tr\u00ECnh Web\\\u0110\u1ED3 \u00E1n\\WebThoiTrang\\WebThoiTrang\\Migrations\\20250625183638_AllowResultImageNullable2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:WebThoiTrang\\Migrations\\20250625183638_AllowResultImageNullable2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\L\u1EADp Tr\u00ECnh Web\\\u0110\u1ED3 \u00E1n\\WebThoiTrang\\WebThoiTrang\\Migrations\\20250625183328_AllowResultImageNullable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:WebThoiTrang\\Migrations\\20250625183328_AllowResultImageNullable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CDC90D2B-B87C-4BDE-A6CB-DE453EAE124F}|WebThoiTrang\\WebThoiTrang.csproj|e:\\l\u1EADp tr\u00ECnh web\\\u0111\u1ED3 \u00E1n\\webthoitrang\\webthoitrang\\models\\shoppingcart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CDC90D2B-B87C-4BDE-A6CB-DE453EAE124F}|WebThoiTrang\\WebThoiTrang.csproj|solutionrelative:webthoitrang\\models\\shoppingcart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CDC90D2B-B87C-4BDE-A6CB-DE453EAE124F}|WebThoiTrang\\WebThoiTrang.csproj|e:\\l\u1EADp tr\u00ECnh web\\\u0111\u1ED3 \u00E1n\\webthoitrang\\webthoitrang\\models\\productdetailwithgeneratedimagesviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CDC90D2B-B87C-4BDE-A6CB-DE453EAE124F}|WebThoiTrang\\WebThoiTrang.csproj|solutionrelative:webthoitrang\\models\\productdetailwithgeneratedimagesviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\L\u1EADp Tr\u00ECnh Web\\\u0110\u1ED3 \u00E1n\\WebThoiTrang\\WebThoiTrang\\Migrations\\20250625153609_UpdateImgGen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:WebThoiTrang\\Migrations\\20250625153609_UpdateImgGen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CDC90D2B-B87C-4BDE-A6CB-DE453EAE124F}|WebThoiTrang\\WebThoiTrang.csproj|e:\\l\u1EADp tr\u00ECnh web\\\u0111\u1ED3 \u00E1n\\webthoitrang\\webthoitrang\\repositories\\ef\\efproductrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CDC90D2B-B87C-4BDE-A6CB-DE453EAE124F}|WebThoiTrang\\WebThoiTrang.csproj|solutionrelative:webthoitrang\\repositories\\ef\\efproductrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CDC90D2B-B87C-4BDE-A6CB-DE453EAE124F}|WebThoiTrang\\WebThoiTrang.csproj|e:\\l\u1EADp tr\u00ECnh web\\\u0111\u1ED3 \u00E1n\\webthoitrang\\webthoitrang\\repositories\\interface\\iemailsender.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CDC90D2B-B87C-4BDE-A6CB-DE453EAE124F}|WebThoiTrang\\WebThoiTrang.csproj|solutionrelative:webthoitrang\\repositories\\interface\\iemailsender.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CDC90D2B-B87C-4BDE-A6CB-DE453EAE124F}|WebThoiTrang\\WebThoiTrang.csproj|e:\\l\u1EADp tr\u00ECnh web\\\u0111\u1ED3 \u00E1n\\webthoitrang\\webthoitrang\\repositories\\interface\\iproductrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CDC90D2B-B87C-4BDE-A6CB-DE453EAE124F}|WebThoiTrang\\WebThoiTrang.csproj|solutionrelative:webthoitrang\\repositories\\interface\\iproductrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CDC90D2B-B87C-4BDE-A6CB-DE453EAE124F}|WebThoiTrang\\WebThoiTrang.csproj|e:\\l\u1EADp tr\u00ECnh web\\\u0111\u1ED3 \u00E1n\\webthoitrang\\webthoitrang\\areas\\admin\\views\\product\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CDC90D2B-B87C-4BDE-A6CB-DE453EAE124F}|WebThoiTrang\\WebThoiTrang.csproj|solutionrelative:webthoitrang\\areas\\admin\\views\\product\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CDC90D2B-B87C-4BDE-A6CB-DE453EAE124F}|WebThoiTrang\\WebThoiTrang.csproj|e:\\l\u1EADp tr\u00ECnh web\\\u0111\u1ED3 \u00E1n\\webthoitrang\\webthoitrang\\areas\\admin\\views\\product\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CDC90D2B-B87C-4BDE-A6CB-DE453EAE124F}|WebThoiTrang\\WebThoiTrang.csproj|solutionrelative:webthoitrang\\areas\\admin\\views\\product\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CDC90D2B-B87C-4BDE-A6CB-DE453EAE124F}|WebThoiTrang\\WebThoiTrang.csproj|e:\\l\u1EADp tr\u00ECnh web\\\u0111\u1ED3 \u00E1n\\webthoitrang\\webthoitrang\\areas\\admin\\views\\product\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CDC90D2B-B87C-4BDE-A6CB-DE453EAE124F}|WebThoiTrang\\WebThoiTrang.csproj|solutionrelative:webthoitrang\\areas\\admin\\views\\product\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CDC90D2B-B87C-4BDE-A6CB-DE453EAE124F}|WebThoiTrang\\WebThoiTrang.csproj|e:\\l\u1EADp tr\u00ECnh web\\\u0111\u1ED3 \u00E1n\\webthoitrang\\webthoitrang\\areas\\admin\\views\\product\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CDC90D2B-B87C-4BDE-A6CB-DE453EAE124F}|WebThoiTrang\\WebThoiTrang.csproj|solutionrelative:webthoitrang\\areas\\admin\\views\\product\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CDC90D2B-B87C-4BDE-A6CB-DE453EAE124F}|WebThoiTrang\\WebThoiTrang.csproj|e:\\l\u1EADp tr\u00ECnh web\\\u0111\u1ED3 \u00E1n\\webthoitrang\\webthoitrang\\areas\\admin\\views\\product\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CDC90D2B-B87C-4BDE-A6CB-DE453EAE124F}|WebThoiTrang\\WebThoiTrang.csproj|solutionrelative:webthoitrang\\areas\\admin\\views\\product\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CDC90D2B-B87C-4BDE-A6CB-DE453EAE124F}|WebThoiTrang\\WebThoiTrang.csproj|e:\\l\u1EADp tr\u00ECnh web\\\u0111\u1ED3 \u00E1n\\webthoitrang\\webthoitrang\\areas\\admin\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CDC90D2B-B87C-4BDE-A6CB-DE453EAE124F}|WebThoiTrang\\WebThoiTrang.csproj|solutionrelative:webthoitrang\\areas\\admin\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CDC90D2B-B87C-4BDE-A6CB-DE453EAE124F}|WebThoiTrang\\WebThoiTrang.csproj|e:\\l\u1EADp tr\u00ECnh web\\\u0111\u1ED3 \u00E1n\\webthoitrang\\webthoitrang\\areas\\admin\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CDC90D2B-B87C-4BDE-A6CB-DE453EAE124F}|WebThoiTrang\\WebThoiTrang.csproj|solutionrelative:webthoitrang\\areas\\admin\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CDC90D2B-B87C-4BDE-A6CB-DE453EAE124F}|WebThoiTrang\\WebThoiTrang.csproj|e:\\l\u1EADp tr\u00ECnh web\\\u0111\u1ED3 \u00E1n\\webthoitrang\\webthoitrang\\areas\\identity\\pages\\account\\login.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CDC90D2B-B87C-4BDE-A6CB-DE453EAE124F}|WebThoiTrang\\WebThoiTrang.csproj|solutionrelative:webthoitrang\\areas\\identity\\pages\\account\\login.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CDC90D2B-B87C-4BDE-A6CB-DE453EAE124F}|WebThoiTrang\\WebThoiTrang.csproj|e:\\l\u1EADp tr\u00ECnh web\\\u0111\u1ED3 \u00E1n\\webthoitrang\\webthoitrang\\areas\\identity\\pages\\account\\verifycode.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CDC90D2B-B87C-4BDE-A6CB-DE453EAE124F}|WebThoiTrang\\WebThoiTrang.csproj|solutionrelative:webthoitrang\\areas\\identity\\pages\\account\\verifycode.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CDC90D2B-B87C-4BDE-A6CB-DE453EAE124F}|WebThoiTrang\\WebThoiTrang.csproj|e:\\l\u1EADp tr\u00ECnh web\\\u0111\u1ED3 \u00E1n\\webthoitrang\\webthoitrang\\areas\\identity\\pages\\account\\verifycode.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CDC90D2B-B87C-4BDE-A6CB-DE453EAE124F}|WebThoiTrang\\WebThoiTrang.csproj|solutionrelative:webthoitrang\\areas\\identity\\pages\\account\\verifycode.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CDC90D2B-B87C-4BDE-A6CB-DE453EAE124F}|WebThoiTrang\\WebThoiTrang.csproj|e:\\l\u1EADp tr\u00ECnh web\\\u0111\u1ED3 \u00E1n\\webthoitrang\\webthoitrang\\areas\\identity\\pages\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CDC90D2B-B87C-4BDE-A6CB-DE453EAE124F}|WebThoiTrang\\WebThoiTrang.csproj|solutionrelative:webthoitrang\\areas\\identity\\pages\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CDC90D2B-B87C-4BDE-A6CB-DE453EAE124F}|WebThoiTrang\\WebThoiTrang.csproj|e:\\l\u1EADp tr\u00ECnh web\\\u0111\u1ED3 \u00E1n\\webthoitrang\\webthoitrang\\areas\\identity\\pages\\account\\register.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CDC90D2B-B87C-4BDE-A6CB-DE453EAE124F}|WebThoiTrang\\WebThoiTrang.csproj|solutionrelative:webthoitrang\\areas\\identity\\pages\\account\\register.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CDC90D2B-B87C-4BDE-A6CB-DE453EAE124F}|WebThoiTrang\\WebThoiTrang.csproj|e:\\l\u1EADp tr\u00ECnh web\\\u0111\u1ED3 \u00E1n\\webthoitrang\\webthoitrang\\areas\\identity\\pages\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CDC90D2B-B87C-4BDE-A6CB-DE453EAE124F}|WebThoiTrang\\WebThoiTrang.csproj|solutionrelative:webthoitrang\\areas\\identity\\pages\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CDC90D2B-B87C-4BDE-A6CB-DE453EAE124F}|WebThoiTrang\\WebThoiTrang.csproj|e:\\l\u1EADp tr\u00ECnh web\\\u0111\u1ED3 \u00E1n\\webthoitrang\\webthoitrang\\migrations\\20250625201445_addproduct.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CDC90D2B-B87C-4BDE-A6CB-DE453EAE124F}|WebThoiTrang\\WebThoiTrang.csproj|solutionrelative:webthoitrang\\migrations\\20250625201445_addproduct.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "banner.jpg",
+              "DocumentMoniker": "E:\\L\u1EADp Tr\u00ECnh Web\\\u0110\u1ED3 \u00E1n\\WebThoiTrang\\WebThoiTrang\\wwwroot\\images\\banner\\banner.jpg",
+              "RelativeDocumentMoniker": "WebThoiTrang\\wwwroot\\images\\banner\\banner.jpg",
+              "ToolTip": "E:\\L\u1EADp Tr\u00ECnh Web\\\u0110\u1ED3 \u00E1n\\WebThoiTrang\\WebThoiTrang\\wwwroot\\images\\banner\\banner.jpg",
+              "RelativeToolTip": "WebThoiTrang\\wwwroot\\images\\banner\\banner.jpg",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001533|",
+              "WhenOpened": "2025-06-26T04:03:44.703Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "E:\\L\u1EADp Tr\u00ECnh Web\\\u0110\u1ED3 \u00E1n\\WebThoiTrang\\WebThoiTrang\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "WebThoiTrang\\Views\\Home\\Index.cshtml",
+              "ToolTip": "E:\\L\u1EADp Tr\u00ECnh Web\\\u0110\u1ED3 \u00E1n\\WebThoiTrang\\WebThoiTrang\\Views\\Home\\Index.cshtml*",
+              "RelativeToolTip": "WebThoiTrang\\Views\\Home\\Index.cshtml*",
+              "ViewState": "AgIAAFUAAAAAAAAAAAAAAGUAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-26T03:46:07.223Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "20250626034022_FixCollectionProductRelation.cs",
+              "DocumentMoniker": "E:\\L\u1EADp Tr\u00ECnh Web\\\u0110\u1ED3 \u00E1n\\WebThoiTrang\\WebThoiTrang\\Migrations\\20250626034022_FixCollectionProductRelation.cs",
+              "RelativeDocumentMoniker": "WebThoiTrang\\Migrations\\20250626034022_FixCollectionProductRelation.cs",
+              "ToolTip": "E:\\L\u1EADp Tr\u00ECnh Web\\\u0110\u1ED3 \u00E1n\\WebThoiTrang\\WebThoiTrang\\Migrations\\20250626034022_FixCollectionProductRelation.cs",
+              "RelativeToolTip": "WebThoiTrang\\Migrations\\20250626034022_FixCollectionProductRelation.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-26T03:40:22.279Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Product.cs",
+              "DocumentMoniker": "E:\\L\u1EADp Tr\u00ECnh Web\\\u0110\u1ED3 \u00E1n\\WebThoiTrang\\WebThoiTrang\\Models\\Entity\\Product.cs",
+              "RelativeDocumentMoniker": "WebThoiTrang\\Models\\Entity\\Product.cs",
+              "ToolTip": "E:\\L\u1EADp Tr\u00ECnh Web\\\u0110\u1ED3 \u00E1n\\WebThoiTrang\\WebThoiTrang\\Models\\Entity\\Product.cs",
+              "RelativeToolTip": "WebThoiTrang\\Models\\Entity\\Product.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAA9wBsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-25T19:21:51.523Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ApplicationUser.cs",
+              "DocumentMoniker": "E:\\L\u1EADp Tr\u00ECnh Web\\\u0110\u1ED3 \u00E1n\\WebThoiTrang\\WebThoiTrang\\Models\\Entity\\ApplicationUser.cs",
+              "RelativeDocumentMoniker": "WebThoiTrang\\Models\\Entity\\ApplicationUser.cs",
+              "ToolTip": "E:\\L\u1EADp Tr\u00ECnh Web\\\u0110\u1ED3 \u00E1n\\WebThoiTrang\\WebThoiTrang\\Models\\Entity\\ApplicationUser.cs",
+              "RelativeToolTip": "WebThoiTrang\\Models\\Entity\\ApplicationUser.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAA6AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-25T05:56:36.704Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "CartItem.cs",
+              "DocumentMoniker": "E:\\L\u1EADp Tr\u00ECnh Web\\\u0110\u1ED3 \u00E1n\\WebThoiTrang\\WebThoiTrang\\Models\\CartItem.cs",
+              "RelativeDocumentMoniker": "WebThoiTrang\\Models\\CartItem.cs",
+              "ToolTip": "E:\\L\u1EADp Tr\u00ECnh Web\\\u0110\u1ED3 \u00E1n\\WebThoiTrang\\WebThoiTrang\\Models\\CartItem.cs",
+              "RelativeToolTip": "WebThoiTrang\\Models\\CartItem.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-25T16:24:00.411Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "CollectionListVm.cs",
+              "DocumentMoniker": "E:\\L\u1EADp Tr\u00ECnh Web\\\u0110\u1ED3 \u00E1n\\WebThoiTrang\\WebThoiTrang\\Models\\CollectionListVm.cs",
+              "RelativeDocumentMoniker": "WebThoiTrang\\Models\\CollectionListVm.cs",
+              "ToolTip": "E:\\L\u1EADp Tr\u00ECnh Web\\\u0110\u1ED3 \u00E1n\\WebThoiTrang\\WebThoiTrang\\Models\\CollectionListVm.cs",
+              "RelativeToolTip": "WebThoiTrang\\Models\\CollectionListVm.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAABTAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-26T03:05:22.025Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "E:\\L\u1EADp Tr\u00ECnh Web\\\u0110\u1ED3 \u00E1n\\WebThoiTrang\\WebThoiTrang\\Views\\Collection\\Index.cshtml",
+              "RelativeDocumentMoniker": "WebThoiTrang\\Views\\Collection\\Index.cshtml",
+              "ToolTip": "E:\\L\u1EADp Tr\u00ECnh Web\\\u0110\u1ED3 \u00E1n\\WebThoiTrang\\WebThoiTrang\\Views\\Collection\\Index.cshtml",
+              "RelativeToolTip": "WebThoiTrang\\Views\\Collection\\Index.cshtml",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA0AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-26T03:02:25.148Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "E:\\L\u1EADp Tr\u00ECnh Web\\\u0110\u1ED3 \u00E1n\\WebThoiTrang\\WebThoiTrang\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "WebThoiTrang\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "E:\\L\u1EADp Tr\u00ECnh Web\\\u0110\u1ED3 \u00E1n\\WebThoiTrang\\WebThoiTrang\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "WebThoiTrang\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAOAAAAAAAAAAAAAuwPUAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-22T11:18:01.736Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "CollectionController.cs",
+              "DocumentMoniker": "E:\\L\u1EADp Tr\u00ECnh Web\\\u0110\u1ED3 \u00E1n\\WebThoiTrang\\WebThoiTrang\\Controllers\\CollectionController.cs",
+              "RelativeDocumentMoniker": "WebThoiTrang\\Controllers\\CollectionController.cs",
+              "ToolTip": "E:\\L\u1EADp Tr\u00ECnh Web\\\u0110\u1ED3 \u00E1n\\WebThoiTrang\\WebThoiTrang\\Controllers\\CollectionController.cs",
+              "RelativeToolTip": "WebThoiTrang\\Controllers\\CollectionController.cs",
+              "ViewState": "AgIAACoAAAAAAAAAAAAuwDcAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-26T03:06:02.58Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "ImageController.cs",
+              "DocumentMoniker": "E:\\L\u1EADp Tr\u00ECnh Web\\\u0110\u1ED3 \u00E1n\\WebThoiTrang\\WebThoiTrang\\Controllers\\ImageController.cs",
+              "RelativeDocumentMoniker": "WebThoiTrang\\Controllers\\ImageController.cs",
+              "ToolTip": "E:\\L\u1EADp Tr\u00ECnh Web\\\u0110\u1ED3 \u00E1n\\WebThoiTrang\\WebThoiTrang\\Controllers\\ImageController.cs",
+              "RelativeToolTip": "WebThoiTrang\\Controllers\\ImageController.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAACAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-25T23:28:33.159Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "EmailConfirmations.cs",
+              "DocumentMoniker": "E:\\L\u1EADp Tr\u00ECnh Web\\\u0110\u1ED3 \u00E1n\\WebThoiTrang\\WebThoiTrang\\Models\\Entity\\EmailConfirmations.cs",
+              "RelativeDocumentMoniker": "WebThoiTrang\\Models\\Entity\\EmailConfirmations.cs",
+              "ToolTip": "E:\\L\u1EADp Tr\u00ECnh Web\\\u0110\u1ED3 \u00E1n\\WebThoiTrang\\WebThoiTrang\\Models\\Entity\\EmailConfirmations.cs",
+              "RelativeToolTip": "WebThoiTrang\\Models\\Entity\\EmailConfirmations.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-25T03:35:55.94Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Collection.cs",
+              "DocumentMoniker": "E:\\L\u1EADp Tr\u00ECnh Web\\\u0110\u1ED3 \u00E1n\\WebThoiTrang\\WebThoiTrang\\Models\\Entity\\Collection.cs",
+              "RelativeDocumentMoniker": "WebThoiTrang\\Models\\Entity\\Collection.cs",
+              "ToolTip": "E:\\L\u1EADp Tr\u00ECnh Web\\\u0110\u1ED3 \u00E1n\\WebThoiTrang\\WebThoiTrang\\Models\\Entity\\Collection.cs",
+              "RelativeToolTip": "WebThoiTrang\\Models\\Entity\\Collection.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-25T19:23:21.235Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "E:\\L\u1EADp Tr\u00ECnh Web\\\u0110\u1ED3 \u00E1n\\WebThoiTrang\\WebThoiTrang\\Models\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "WebThoiTrang\\Models\\ApplicationDbContext.cs",
+              "ToolTip": "E:\\L\u1EADp Tr\u00ECnh Web\\\u0110\u1ED3 \u00E1n\\WebThoiTrang\\WebThoiTrang\\Models\\ApplicationDbContext.cs",
+              "RelativeToolTip": "WebThoiTrang\\Models\\ApplicationDbContext.cs",
+              "ViewState": "AgIAACMAAAAAAAAAAAAuwC0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-25T14:37:03.787Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "CheckoutViewModel.cs",
+              "DocumentMoniker": "E:\\L\u1EADp Tr\u00ECnh Web\\\u0110\u1ED3 \u00E1n\\WebThoiTrang\\WebThoiTrang\\Models\\CheckoutViewModel.cs",
+              "RelativeDocumentMoniker": "WebThoiTrang\\Models\\CheckoutViewModel.cs",
+              "ToolTip": "E:\\L\u1EADp Tr\u00ECnh Web\\\u0110\u1ED3 \u00E1n\\WebThoiTrang\\WebThoiTrang\\Models\\CheckoutViewModel.cs",
+              "RelativeToolTip": "WebThoiTrang\\Models\\CheckoutViewModel.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAA+wBAAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-22T11:47:04.569Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "ShoppingCartController.cs",
+              "DocumentMoniker": "E:\\L\u1EADp Tr\u00ECnh Web\\\u0110\u1ED3 \u00E1n\\WebThoiTrang\\WebThoiTrang\\Controllers\\ShoppingCartController.cs",
+              "RelativeDocumentMoniker": "WebThoiTrang\\Controllers\\ShoppingCartController.cs",
+              "ToolTip": "E:\\L\u1EADp Tr\u00ECnh Web\\\u0110\u1ED3 \u00E1n\\WebThoiTrang\\WebThoiTrang\\Controllers\\ShoppingCartController.cs",
+              "RelativeToolTip": "WebThoiTrang\\Controllers\\ShoppingCartController.cs",
+              "ViewState": "AgIAAIkAAAAAAAAAAAAqwLAAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-22T11:47:54.688Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "ProductController.cs",
+              "DocumentMoniker": "E:\\L\u1EADp Tr\u00ECnh Web\\\u0110\u1ED3 \u00E1n\\WebThoiTrang\\WebThoiTrang\\Controllers\\ProductController.cs",
+              "RelativeDocumentMoniker": "WebThoiTrang\\Controllers\\ProductController.cs",
+              "ToolTip": "E:\\L\u1EADp Tr\u00ECnh Web\\\u0110\u1ED3 \u00E1n\\WebThoiTrang\\WebThoiTrang\\Controllers\\ProductController.cs",
+              "RelativeToolTip": "WebThoiTrang\\Controllers\\ProductController.cs",
+              "ViewState": "AgIAANEAAAAAAAAAAAAuwN0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-25T09:26:16.921Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "ImageGeneratorController.cs",
+              "DocumentMoniker": "E:\\L\u1EADp Tr\u00ECnh Web\\\u0110\u1ED3 \u00E1n\\WebThoiTrang\\WebThoiTrang\\Controllers\\ImageGeneratorController.cs",
+              "RelativeDocumentMoniker": "WebThoiTrang\\Controllers\\ImageGeneratorController.cs",
+              "ToolTip": "E:\\L\u1EADp Tr\u00ECnh Web\\\u0110\u1ED3 \u00E1n\\WebThoiTrang\\WebThoiTrang\\Controllers\\ImageGeneratorController.cs",
+              "RelativeToolTip": "WebThoiTrang\\Controllers\\ImageGeneratorController.cs",
+              "ViewState": "AgIAAOwAAAAAAAAAAAAuwAABAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-25T12:56:44.954Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "ProductImage.cs",
+              "DocumentMoniker": "E:\\L\u1EADp Tr\u00ECnh Web\\\u0110\u1ED3 \u00E1n\\WebThoiTrang\\WebThoiTrang\\Models\\Entity\\ProductImage.cs",
+              "RelativeDocumentMoniker": "WebThoiTrang\\Models\\Entity\\ProductImage.cs",
+              "ToolTip": "E:\\L\u1EADp Tr\u00ECnh Web\\\u0110\u1ED3 \u00E1n\\WebThoiTrang\\WebThoiTrang\\Models\\Entity\\ProductImage.cs",
+              "RelativeToolTip": "WebThoiTrang\\Models\\Entity\\ProductImage.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAYwA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-22T11:13:55.493Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "20250626031835_UpdateCollection.cs",
+              "DocumentMoniker": "E:\\L\u1EADp Tr\u00ECnh Web\\\u0110\u1ED3 \u00E1n\\WebThoiTrang\\WebThoiTrang\\Migrations\\20250626031835_UpdateCollection.cs",
+              "RelativeDocumentMoniker": "WebThoiTrang\\Migrations\\20250626031835_UpdateCollection.cs",
+              "ToolTip": "E:\\L\u1EADp Tr\u00ECnh Web\\\u0110\u1ED3 \u00E1n\\WebThoiTrang\\WebThoiTrang\\Migrations\\20250626031835_UpdateCollection.cs",
+              "RelativeToolTip": "WebThoiTrang\\Migrations\\20250626031835_UpdateCollection.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-26T03:18:35.49Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "E:\\L\u1EADp Tr\u00ECnh Web\\\u0110\u1ED3 \u00E1n\\WebThoiTrang\\WebThoiTrang\\Views\\Product\\Index.cshtml",
+              "RelativeDocumentMoniker": "WebThoiTrang\\Views\\Product\\Index.cshtml",
+              "ToolTip": "E:\\L\u1EADp Tr\u00ECnh Web\\\u0110\u1ED3 \u00E1n\\WebThoiTrang\\WebThoiTrang\\Views\\Product\\Index.cshtml",
+              "RelativeToolTip": "WebThoiTrang\\Views\\Product\\Index.cshtml",
+              "ViewState": "AgIAAOIAAAAAAAAAAAAuwPcAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-22T09:43:19.758Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "E:\\L\u1EADp Tr\u00ECnh Web\\\u0110\u1ED3 \u00E1n\\WebThoiTrang\\WebThoiTrang\\Views\\Product\\Details.cshtml",
+              "RelativeDocumentMoniker": "WebThoiTrang\\Views\\Product\\Details.cshtml",
+              "ToolTip": "E:\\L\u1EADp Tr\u00ECnh Web\\\u0110\u1ED3 \u00E1n\\WebThoiTrang\\WebThoiTrang\\Views\\Product\\Details.cshtml",
+              "RelativeToolTip": "WebThoiTrang\\Views\\Product\\Details.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-22T10:43:37.152Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "ProductListVm.cs",
+              "DocumentMoniker": "E:\\L\u1EADp Tr\u00ECnh Web\\\u0110\u1ED3 \u00E1n\\WebThoiTrang\\WebThoiTrang\\Models\\ProductListVm.cs",
+              "RelativeDocumentMoniker": "WebThoiTrang\\Models\\ProductListVm.cs",
+              "ToolTip": "E:\\L\u1EADp Tr\u00ECnh Web\\\u0110\u1ED3 \u00E1n\\WebThoiTrang\\WebThoiTrang\\Models\\ProductListVm.cs",
+              "RelativeToolTip": "WebThoiTrang\\Models\\ProductListVm.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAwwBQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-25T09:36:05.016Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "E:\\L\u1EADp Tr\u00ECnh Web\\\u0110\u1ED3 \u00E1n\\WebThoiTrang\\WebThoiTrang\\appsettings.json",
+              "RelativeDocumentMoniker": "WebThoiTrang\\appsettings.json",
+              "ToolTip": "E:\\L\u1EADp Tr\u00ECnh Web\\\u0110\u1ED3 \u00E1n\\WebThoiTrang\\WebThoiTrang\\appsettings.json",
+              "RelativeToolTip": "WebThoiTrang\\appsettings.json",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAACIAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-06-22T10:18:20.631Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "Program.cs",
+              "DocumentMoniker": "E:\\L\u1EADp Tr\u00ECnh Web\\\u0110\u1ED3 \u00E1n\\WebThoiTrang\\WebThoiTrang\\Program.cs",
+              "RelativeDocumentMoniker": "WebThoiTrang\\Program.cs",
+              "ToolTip": "E:\\L\u1EADp Tr\u00ECnh Web\\\u0110\u1ED3 \u00E1n\\WebThoiTrang\\WebThoiTrang\\Program.cs",
+              "RelativeToolTip": "WebThoiTrang\\Program.cs",
+              "ViewState": "AgIAAG8AAAAAAAAAAAAAAHYAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-22T10:11:49.558Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "_ViewImports.cshtml",
+              "DocumentMoniker": "E:\\L\u1EADp Tr\u00ECnh Web\\\u0110\u1ED3 \u00E1n\\WebThoiTrang\\WebThoiTrang\\Views\\_ViewImports.cshtml",
+              "RelativeDocumentMoniker": "WebThoiTrang\\Views\\_ViewImports.cshtml",
+              "ToolTip": "E:\\L\u1EADp Tr\u00ECnh Web\\\u0110\u1ED3 \u00E1n\\WebThoiTrang\\WebThoiTrang\\Views\\_ViewImports.cshtml",
+              "RelativeToolTip": "WebThoiTrang\\Views\\_ViewImports.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-25T11:32:59.418Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "Result.cshtml",
+              "DocumentMoniker": "E:\\L\u1EADp Tr\u00ECnh Web\\\u0110\u1ED3 \u00E1n\\WebThoiTrang\\WebThoiTrang\\Views\\ImageGenerator\\Result.cshtml",
+              "RelativeDocumentMoniker": "WebThoiTrang\\Views\\ImageGenerator\\Result.cshtml",
+              "ToolTip": "E:\\L\u1EADp Tr\u00ECnh Web\\\u0110\u1ED3 \u00E1n\\WebThoiTrang\\WebThoiTrang\\Views\\ImageGenerator\\Result.cshtml",
+              "RelativeToolTip": "WebThoiTrang\\Views\\ImageGenerator\\Result.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACYAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-25T15:22:43.528Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "E:\\L\u1EADp Tr\u00ECnh Web\\\u0110\u1ED3 \u00E1n\\WebThoiTrang\\WebThoiTrang\\Views\\ImageGenerator\\Index.cshtml",
+              "RelativeDocumentMoniker": "WebThoiTrang\\Views\\ImageGenerator\\Index.cshtml",
+              "ToolTip": "E:\\L\u1EADp Tr\u00ECnh Web\\\u0110\u1ED3 \u00E1n\\WebThoiTrang\\WebThoiTrang\\Views\\ImageGenerator\\Index.cshtml",
+              "RelativeToolTip": "WebThoiTrang\\Views\\ImageGenerator\\Index.cshtml",
+              "ViewState": "AgIAAFUAAAAAAAAAAAAYwGMAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-25T14:58:21.664Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "TryOnJobService.cs",
+              "DocumentMoniker": "E:\\L\u1EADp Tr\u00ECnh Web\\\u0110\u1ED3 \u00E1n\\WebThoiTrang\\WebThoiTrang\\Services\\TryOnJobService.cs",
+              "RelativeDocumentMoniker": "WebThoiTrang\\Services\\TryOnJobService.cs",
+              "ToolTip": "E:\\L\u1EADp Tr\u00ECnh Web\\\u0110\u1ED3 \u00E1n\\WebThoiTrang\\WebThoiTrang\\Services\\TryOnJobService.cs",
+              "RelativeToolTip": "WebThoiTrang\\Services\\TryOnJobService.cs",
+              "ViewState": "AgIAAGAAAAAAAAAAAAAAAGwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-25T22:39:51.995Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "ImageProcessingService.cs",
+              "DocumentMoniker": "E:\\L\u1EADp Tr\u00ECnh Web\\\u0110\u1ED3 \u00E1n\\WebThoiTrang\\WebThoiTrang\\Services\\ImageProcessingService.cs",
+              "RelativeDocumentMoniker": "WebThoiTrang\\Services\\ImageProcessingService.cs",
+              "ToolTip": "E:\\L\u1EADp Tr\u00ECnh Web\\\u0110\u1ED3 \u00E1n\\WebThoiTrang\\WebThoiTrang\\Services\\ImageProcessingService.cs",
+              "RelativeToolTip": "WebThoiTrang\\Services\\ImageProcessingService.cs",
+              "ViewState": "AgIAAKsAAAAAAAAAAAAywLkAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-25T18:43:34.147Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "_ValidationScriptsPartial.cshtml",
+              "DocumentMoniker": "E:\\L\u1EADp Tr\u00ECnh Web\\\u0110\u1ED3 \u00E1n\\WebThoiTrang\\WebThoiTrang\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "RelativeDocumentMoniker": "WebThoiTrang\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "ToolTip": "E:\\L\u1EADp Tr\u00ECnh Web\\\u0110\u1ED3 \u00E1n\\WebThoiTrang\\WebThoiTrang\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "RelativeToolTip": "WebThoiTrang\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-25T11:10:27.341Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "site.js",
+              "DocumentMoniker": "E:\\L\u1EADp Tr\u00ECnh Web\\\u0110\u1ED3 \u00E1n\\WebThoiTrang\\WebThoiTrang\\wwwroot\\js\\site.js",
+              "RelativeDocumentMoniker": "WebThoiTrang\\wwwroot\\js\\site.js",
+              "ToolTip": "E:\\L\u1EADp Tr\u00ECnh Web\\\u0110\u1ED3 \u00E1n\\WebThoiTrang\\WebThoiTrang\\wwwroot\\js\\site.js",
+              "RelativeToolTip": "WebThoiTrang\\wwwroot\\js\\site.js",
+              "ViewState": "AgIAAGEAAAAAAAAAAAAQwCAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-06-25T08:54:18.867Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "EmailSender.cs",
+              "DocumentMoniker": "E:\\L\u1EADp Tr\u00ECnh Web\\\u0110\u1ED3 \u00E1n\\WebThoiTrang\\WebThoiTrang\\Services\\EmailSender.cs",
+              "RelativeDocumentMoniker": "WebThoiTrang\\Services\\EmailSender.cs",
+              "ToolTip": "E:\\L\u1EADp Tr\u00ECnh Web\\\u0110\u1ED3 \u00E1n\\WebThoiTrang\\WebThoiTrang\\Services\\EmailSender.cs",
+              "RelativeToolTip": "WebThoiTrang\\Services\\EmailSender.cs",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAwwDEAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-25T06:41:38.205Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 56,
+              "Title": "20250625201445_AddProduct.cs",
+              "DocumentMoniker": "E:\\L\u1EADp Tr\u00ECnh Web\\\u0110\u1ED3 \u00E1n\\WebThoiTrang\\WebThoiTrang\\Migrations\\20250625201445_AddProduct.cs",
+              "RelativeDocumentMoniker": "WebThoiTrang\\Migrations\\20250625201445_AddProduct.cs",
+              "ToolTip": "E:\\L\u1EADp Tr\u00ECnh Web\\\u0110\u1ED3 \u00E1n\\WebThoiTrang\\WebThoiTrang\\Migrations\\20250625201445_AddProduct.cs",
+              "RelativeToolTip": "WebThoiTrang\\Migrations\\20250625201445_AddProduct.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-25T20:14:45.869Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "20250625200712_AddNewProduct.cs",
+              "DocumentMoniker": "E:\\L\u1EADp Tr\u00ECnh Web\\\u0110\u1ED3 \u00E1n\\WebThoiTrang\\WebThoiTrang\\Migrations\\20250625200712_AddNewProduct.cs",
+              "RelativeDocumentMoniker": "WebThoiTrang\\Migrations\\20250625200712_AddNewProduct.cs",
+              "ToolTip": "E:\\L\u1EADp Tr\u00ECnh Web\\\u0110\u1ED3 \u00E1n\\WebThoiTrang\\WebThoiTrang\\Migrations\\20250625200712_AddNewProduct.cs",
+              "RelativeToolTip": "WebThoiTrang\\Migrations\\20250625200712_AddNewProduct.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAABEAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-25T20:07:12.647Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "20250625195525_AddCollectionAndSeedData.cs",
+              "DocumentMoniker": "E:\\L\u1EADp Tr\u00ECnh Web\\\u0110\u1ED3 \u00E1n\\WebThoiTrang\\WebThoiTrang\\Migrations\\20250625195525_AddCollectionAndSeedData.cs",
+              "RelativeDocumentMoniker": "WebThoiTrang\\Migrations\\20250625195525_AddCollectionAndSeedData.cs",
+              "ToolTip": "E:\\L\u1EADp Tr\u00ECnh Web\\\u0110\u1ED3 \u00E1n\\WebThoiTrang\\WebThoiTrang\\Migrations\\20250625195525_AddCollectionAndSeedData.cs",
+              "RelativeToolTip": "WebThoiTrang\\Migrations\\20250625195525_AddCollectionAndSeedData.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAQwBYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-25T19:55:25.543Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "20250625183638_AllowResultImageNullable2.cs",
+              "DocumentMoniker": "E:\\L\u1EADp Tr\u00ECnh Web\\\u0110\u1ED3 \u00E1n\\WebThoiTrang\\WebThoiTrang\\Migrations\\20250625183638_AllowResultImageNullable2.cs",
+              "RelativeDocumentMoniker": "WebThoiTrang\\Migrations\\20250625183638_AllowResultImageNullable2.cs",
+              "ToolTip": "E:\\L\u1EADp Tr\u00ECnh Web\\\u0110\u1ED3 \u00E1n\\WebThoiTrang\\WebThoiTrang\\Migrations\\20250625183638_AllowResultImageNullable2.cs",
+              "RelativeToolTip": "WebThoiTrang\\Migrations\\20250625183638_AllowResultImageNullable2.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-25T18:36:38.819Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "20250625183328_AllowResultImageNullable.cs",
+              "DocumentMoniker": "E:\\L\u1EADp Tr\u00ECnh Web\\\u0110\u1ED3 \u00E1n\\WebThoiTrang\\WebThoiTrang\\Migrations\\20250625183328_AllowResultImageNullable.cs",
+              "RelativeDocumentMoniker": "WebThoiTrang\\Migrations\\20250625183328_AllowResultImageNullable.cs",
+              "ToolTip": "E:\\L\u1EADp Tr\u00ECnh Web\\\u0110\u1ED3 \u00E1n\\WebThoiTrang\\WebThoiTrang\\Migrations\\20250625183328_AllowResultImageNullable.cs",
+              "RelativeToolTip": "WebThoiTrang\\Migrations\\20250625183328_AllowResultImageNullable.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-25T18:33:28.582Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "ShoppingCart.cs",
+              "DocumentMoniker": "E:\\L\u1EADp Tr\u00ECnh Web\\\u0110\u1ED3 \u00E1n\\WebThoiTrang\\WebThoiTrang\\Models\\ShoppingCart.cs",
+              "RelativeDocumentMoniker": "WebThoiTrang\\Models\\ShoppingCart.cs",
+              "ToolTip": "E:\\L\u1EADp Tr\u00ECnh Web\\\u0110\u1ED3 \u00E1n\\WebThoiTrang\\WebThoiTrang\\Models\\ShoppingCart.cs",
+              "RelativeToolTip": "WebThoiTrang\\Models\\ShoppingCart.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAUwE4AAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-25T16:24:52.952Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "ProductDetailWithGeneratedImagesViewModel.cs",
+              "DocumentMoniker": "E:\\L\u1EADp Tr\u00ECnh Web\\\u0110\u1ED3 \u00E1n\\WebThoiTrang\\WebThoiTrang\\Models\\ProductDetailWithGeneratedImagesViewModel.cs",
+              "RelativeDocumentMoniker": "WebThoiTrang\\Models\\ProductDetailWithGeneratedImagesViewModel.cs",
+              "ToolTip": "E:\\L\u1EADp Tr\u00ECnh Web\\\u0110\u1ED3 \u00E1n\\WebThoiTrang\\WebThoiTrang\\Models\\ProductDetailWithGeneratedImagesViewModel.cs",
+              "RelativeToolTip": "WebThoiTrang\\Models\\ProductDetailWithGeneratedImagesViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-25T15:10:58.119Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
+              "Title": "20250625153609_UpdateImgGen.cs",
+              "DocumentMoniker": "E:\\L\u1EADp Tr\u00ECnh Web\\\u0110\u1ED3 \u00E1n\\WebThoiTrang\\WebThoiTrang\\Migrations\\20250625153609_UpdateImgGen.cs",
+              "RelativeDocumentMoniker": "WebThoiTrang\\Migrations\\20250625153609_UpdateImgGen.cs",
+              "ToolTip": "E:\\L\u1EADp Tr\u00ECnh Web\\\u0110\u1ED3 \u00E1n\\WebThoiTrang\\WebThoiTrang\\Migrations\\20250625153609_UpdateImgGen.cs",
+              "RelativeToolTip": "WebThoiTrang\\Migrations\\20250625153609_UpdateImgGen.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-25T15:36:09.215Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 48,
+              "Title": "ProductController.cs",
+              "DocumentMoniker": "E:\\L\u1EADp Tr\u00ECnh Web\\\u0110\u1ED3 \u00E1n\\WebThoiTrang\\WebThoiTrang\\Areas\\admin\\Controllers\\ProductController.cs",
+              "RelativeDocumentMoniker": "WebThoiTrang\\Areas\\admin\\Controllers\\ProductController.cs",
+              "ToolTip": "E:\\L\u1EADp Tr\u00ECnh Web\\\u0110\u1ED3 \u00E1n\\WebThoiTrang\\WebThoiTrang\\Areas\\admin\\Controllers\\ProductController.cs",
+              "RelativeToolTip": "WebThoiTrang\\Areas\\admin\\Controllers\\ProductController.cs",
+              "ViewState": "AgIAACoBAAAAAAAAAAAswDwBAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-25T11:07:54.291Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 43,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "E:\\L\u1EADp Tr\u00ECnh Web\\\u0110\u1ED3 \u00E1n\\WebThoiTrang\\WebThoiTrang\\Areas\\admin\\Views\\Product\\Create.cshtml",
+              "RelativeDocumentMoniker": "WebThoiTrang\\Areas\\admin\\Views\\Product\\Create.cshtml",
+              "ToolTip": "E:\\L\u1EADp Tr\u00ECnh Web\\\u0110\u1ED3 \u00E1n\\WebThoiTrang\\WebThoiTrang\\Areas\\admin\\Views\\Product\\Create.cshtml",
+              "RelativeToolTip": "WebThoiTrang\\Areas\\admin\\Views\\Product\\Create.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-25T11:08:40.814Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 42,
+              "Title": "IProductRepository.cs",
+              "DocumentMoniker": "E:\\L\u1EADp Tr\u00ECnh Web\\\u0110\u1ED3 \u00E1n\\WebThoiTrang\\WebThoiTrang\\Repositories\\Interface\\IProductRepository.cs",
+              "RelativeDocumentMoniker": "WebThoiTrang\\Repositories\\Interface\\IProductRepository.cs",
+              "ToolTip": "E:\\L\u1EADp Tr\u00ECnh Web\\\u0110\u1ED3 \u00E1n\\WebThoiTrang\\WebThoiTrang\\Repositories\\Interface\\IProductRepository.cs",
+              "RelativeToolTip": "WebThoiTrang\\Repositories\\Interface\\IProductRepository.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAAwAwAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-25T13:00:28.108Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 40,
+              "Title": "EFProductRepository.cs",
+              "DocumentMoniker": "E:\\L\u1EADp Tr\u00ECnh Web\\\u0110\u1ED3 \u00E1n\\WebThoiTrang\\WebThoiTrang\\Repositories\\EF\\EFProductRepository.cs",
+              "RelativeDocumentMoniker": "WebThoiTrang\\Repositories\\EF\\EFProductRepository.cs",
+              "ToolTip": "E:\\L\u1EADp Tr\u00ECnh Web\\\u0110\u1ED3 \u00E1n\\WebThoiTrang\\WebThoiTrang\\Repositories\\EF\\EFProductRepository.cs",
+              "RelativeToolTip": "WebThoiTrang\\Repositories\\EF\\EFProductRepository.cs",
+              "ViewState": "AgIAACQAAAAAAAAAAAAowCoAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-25T13:01:08.308Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 46,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "E:\\L\u1EADp Tr\u00ECnh Web\\\u0110\u1ED3 \u00E1n\\WebThoiTrang\\WebThoiTrang\\Areas\\admin\\Views\\Product\\Index.cshtml",
+              "RelativeDocumentMoniker": "WebThoiTrang\\Areas\\admin\\Views\\Product\\Index.cshtml",
+              "ToolTip": "E:\\L\u1EADp Tr\u00ECnh Web\\\u0110\u1ED3 \u00E1n\\WebThoiTrang\\WebThoiTrang\\Areas\\admin\\Views\\Product\\Index.cshtml",
+              "RelativeToolTip": "WebThoiTrang\\Areas\\admin\\Views\\Product\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-25T11:08:29.151Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 41,
+              "Title": "IEmailSender.cs",
+              "DocumentMoniker": "E:\\L\u1EADp Tr\u00ECnh Web\\\u0110\u1ED3 \u00E1n\\WebThoiTrang\\WebThoiTrang\\Repositories\\Interface\\IEmailSender.cs",
+              "RelativeDocumentMoniker": "WebThoiTrang\\Repositories\\Interface\\IEmailSender.cs",
+              "ToolTip": "E:\\L\u1EADp Tr\u00ECnh Web\\\u0110\u1ED3 \u00E1n\\WebThoiTrang\\WebThoiTrang\\Repositories\\Interface\\IEmailSender.cs",
+              "RelativeToolTip": "WebThoiTrang\\Repositories\\Interface\\IEmailSender.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-25T06:41:20.941Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 45,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "E:\\L\u1EADp Tr\u00ECnh Web\\\u0110\u1ED3 \u00E1n\\WebThoiTrang\\WebThoiTrang\\Areas\\admin\\Views\\Product\\Edit.cshtml",
+              "RelativeDocumentMoniker": "WebThoiTrang\\Areas\\admin\\Views\\Product\\Edit.cshtml",
+              "ToolTip": "E:\\L\u1EADp Tr\u00ECnh Web\\\u0110\u1ED3 \u00E1n\\WebThoiTrang\\WebThoiTrang\\Areas\\admin\\Views\\Product\\Edit.cshtml",
+              "RelativeToolTip": "WebThoiTrang\\Areas\\admin\\Views\\Product\\Edit.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-25T11:08:48.308Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 44,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "E:\\L\u1EADp Tr\u00ECnh Web\\\u0110\u1ED3 \u00E1n\\WebThoiTrang\\WebThoiTrang\\Areas\\admin\\Views\\Product\\Details.cshtml",
+              "RelativeDocumentMoniker": "WebThoiTrang\\Areas\\admin\\Views\\Product\\Details.cshtml",
+              "ToolTip": "E:\\L\u1EADp Tr\u00ECnh Web\\\u0110\u1ED3 \u00E1n\\WebThoiTrang\\WebThoiTrang\\Areas\\admin\\Views\\Product\\Details.cshtml",
+              "RelativeToolTip": "WebThoiTrang\\Areas\\admin\\Views\\Product\\Details.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-25T11:09:07.666Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 47,
+              "Title": "Delete.cshtml",
+              "DocumentMoniker": "E:\\L\u1EADp Tr\u00ECnh Web\\\u0110\u1ED3 \u00E1n\\WebThoiTrang\\WebThoiTrang\\Areas\\admin\\Views\\Product\\Delete.cshtml",
+              "RelativeDocumentMoniker": "WebThoiTrang\\Areas\\admin\\Views\\Product\\Delete.cshtml",
+              "ToolTip": "E:\\L\u1EADp Tr\u00ECnh Web\\\u0110\u1ED3 \u00E1n\\WebThoiTrang\\WebThoiTrang\\Areas\\admin\\Views\\Product\\Delete.cshtml",
+              "RelativeToolTip": "WebThoiTrang\\Areas\\admin\\Views\\Product\\Delete.cshtml",
+              "ViewState": "AgIAAE0AAAAAAAAAAAAAAEcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-25T11:09:30.432Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 49,
+              "Title": "_ViewImports.cshtml",
+              "DocumentMoniker": "E:\\L\u1EADp Tr\u00ECnh Web\\\u0110\u1ED3 \u00E1n\\WebThoiTrang\\WebThoiTrang\\Areas\\admin\\Views\\_ViewImports.cshtml",
+              "RelativeDocumentMoniker": "WebThoiTrang\\Areas\\admin\\Views\\_ViewImports.cshtml",
+              "ToolTip": "E:\\L\u1EADp Tr\u00ECnh Web\\\u0110\u1ED3 \u00E1n\\WebThoiTrang\\WebThoiTrang\\Areas\\admin\\Views\\_ViewImports.cshtml",
+              "RelativeToolTip": "WebThoiTrang\\Areas\\admin\\Views\\_ViewImports.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-25T11:39:39.686Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 50,
+              "Title": "Login.cshtml.cs",
+              "DocumentMoniker": "E:\\L\u1EADp Tr\u00ECnh Web\\\u0110\u1ED3 \u00E1n\\WebThoiTrang\\WebThoiTrang\\Areas\\Identity\\Pages\\Account\\Login.cshtml.cs",
+              "RelativeDocumentMoniker": "WebThoiTrang\\Areas\\Identity\\Pages\\Account\\Login.cshtml.cs",
+              "ToolTip": "E:\\L\u1EADp Tr\u00ECnh Web\\\u0110\u1ED3 \u00E1n\\WebThoiTrang\\WebThoiTrang\\Areas\\Identity\\Pages\\Account\\Login.cshtml.cs",
+              "RelativeToolTip": "WebThoiTrang\\Areas\\Identity\\Pages\\Account\\Login.cshtml.cs",
+              "ViewState": "AgIAAHcAAAAAAAAAAADwv3kAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-22T10:14:58.105Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 51,
+              "Title": "VerifyCode.cshtml",
+              "DocumentMoniker": "E:\\L\u1EADp Tr\u00ECnh Web\\\u0110\u1ED3 \u00E1n\\WebThoiTrang\\WebThoiTrang\\Areas\\Identity\\Pages\\Account\\VerifyCode.cshtml",
+              "RelativeDocumentMoniker": "WebThoiTrang\\Areas\\Identity\\Pages\\Account\\VerifyCode.cshtml",
+              "ToolTip": "E:\\L\u1EADp Tr\u00ECnh Web\\\u0110\u1ED3 \u00E1n\\WebThoiTrang\\WebThoiTrang\\Areas\\Identity\\Pages\\Account\\VerifyCode.cshtml",
+              "RelativeToolTip": "WebThoiTrang\\Areas\\Identity\\Pages\\Account\\VerifyCode.cshtml",
+              "ViewState": "AgIAAG8AAAAAAAAAAADwv5UAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-25T03:30:01.938Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 54,
+              "Title": "Register.cshtml.cs",
+              "DocumentMoniker": "E:\\L\u1EADp Tr\u00ECnh Web\\\u0110\u1ED3 \u00E1n\\WebThoiTrang\\WebThoiTrang\\Areas\\Identity\\Pages\\Account\\Register.cshtml.cs",
+              "RelativeDocumentMoniker": "WebThoiTrang\\Areas\\Identity\\Pages\\Account\\Register.cshtml.cs",
+              "ToolTip": "E:\\L\u1EADp Tr\u00ECnh Web\\\u0110\u1ED3 \u00E1n\\WebThoiTrang\\WebThoiTrang\\Areas\\Identity\\Pages\\Account\\Register.cshtml.cs",
+              "RelativeToolTip": "WebThoiTrang\\Areas\\Identity\\Pages\\Account\\Register.cshtml.cs",
+              "ViewState": "AgIAAAQBAAAAAAAAAAAwwBgBAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-25T03:27:44.014Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 53,
+              "Title": "Register.cshtml",
+              "DocumentMoniker": "E:\\L\u1EADp Tr\u00ECnh Web\\\u0110\u1ED3 \u00E1n\\WebThoiTrang\\WebThoiTrang\\Areas\\Identity\\Pages\\Account\\Register.cshtml",
+              "RelativeDocumentMoniker": "WebThoiTrang\\Areas\\Identity\\Pages\\Account\\Register.cshtml",
+              "ToolTip": "E:\\L\u1EADp Tr\u00ECnh Web\\\u0110\u1ED3 \u00E1n\\WebThoiTrang\\WebThoiTrang\\Areas\\Identity\\Pages\\Account\\Register.cshtml",
+              "RelativeToolTip": "WebThoiTrang\\Areas\\Identity\\Pages\\Account\\Register.cshtml",
+              "ViewState": "AgIAAIEAAAAAAAAAAAAAABoBAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-25T05:39:03.84Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 52,
+              "Title": "VerifyCode.cshtml.cs",
+              "DocumentMoniker": "E:\\L\u1EADp Tr\u00ECnh Web\\\u0110\u1ED3 \u00E1n\\WebThoiTrang\\WebThoiTrang\\Areas\\Identity\\Pages\\Account\\VerifyCode.cshtml.cs",
+              "RelativeDocumentMoniker": "WebThoiTrang\\Areas\\Identity\\Pages\\Account\\VerifyCode.cshtml.cs",
+              "ToolTip": "E:\\L\u1EADp Tr\u00ECnh Web\\\u0110\u1ED3 \u00E1n\\WebThoiTrang\\WebThoiTrang\\Areas\\Identity\\Pages\\Account\\VerifyCode.cshtml.cs",
+              "RelativeToolTip": "WebThoiTrang\\Areas\\Identity\\Pages\\Account\\VerifyCode.cshtml.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAAJwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-25T03:33:02.627Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 55,
+              "Title": "_ViewStart.cshtml",
+              "DocumentMoniker": "E:\\L\u1EADp Tr\u00ECnh Web\\\u0110\u1ED3 \u00E1n\\WebThoiTrang\\WebThoiTrang\\Areas\\Identity\\Pages\\_ViewStart.cshtml",
+              "RelativeDocumentMoniker": "WebThoiTrang\\Areas\\Identity\\Pages\\_ViewStart.cshtml",
+              "ToolTip": "E:\\L\u1EADp Tr\u00ECnh Web\\\u0110\u1ED3 \u00E1n\\WebThoiTrang\\WebThoiTrang\\Areas\\Identity\\Pages\\_ViewStart.cshtml",
+              "RelativeToolTip": "WebThoiTrang\\Areas\\Identity\\Pages\\_ViewStart.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-25T04:42:25.477Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

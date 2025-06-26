@@ -1,0 +1,292 @@
+﻿@model WebThoiTrang.Models.ShoppingCart
+
+@{
+    ViewData["Title"] = "Giỏ hàng của bạn";
+    var cartTotal = Model.TotalAmount; // Lấy tổng tiền từ đối tượng ShoppingCart
+    var totalQuantity = Model.Items.Sum(item => item.Quantity); // Tổng số lượng sản phẩm
+}
+
+<style>
+    /* Custom styles for a cleaner look */
+    body {
+        background-color: #f8f9fa; /* Light grey background */
+    }
+
+    .container {
+        max-width: 1200px; /* Max width for better readability on large screens */
+    }
+
+    /* Styles for the specific breadcrumb requested */
+    .checkout-breadcrumb {
+        display: flex;
+        justify-content: center;
+        list-style: none;
+        padding: 0;
+        margin-bottom: 3rem; /* More space below breadcrumb */
+        font-size: 1.1rem; /* Slightly larger font for breadcrumb */
+    }
+
+        .checkout-breadcrumb li {
+            margin: 0 5px; /* Spacing between items */
+            color: #6c757d; /* Default muted color */
+        }
+
+            .checkout-breadcrumb li a {
+                color: #007bff; /* Link color */
+                text-decoration: none;
+                font-weight: 500;
+            }
+
+                .checkout-breadcrumb li a:hover {
+                    text-decoration: underline;
+                }
+
+            .checkout-breadcrumb li.active {
+                color: #007bff; /* Active step color */
+                font-weight: 600;
+            }
+
+    h2 {
+        color: #343a40; /* Dark grey for headings */
+        font-weight: 700;
+        margin-bottom: 2.5rem; /* More space below heading */
+    }
+
+    .card {
+        border-radius: 0.75rem; /* Rounded corners for cards */
+        overflow: hidden; /* Ensures content stays within rounded corners */
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.08); /* Softer shadow */
+        border: none; /* Remove default border */
+    }
+
+    .card-header {
+        background-color: #007bff; /* Primary blue for headers */
+        color: white;
+        font-weight: 600;
+        font-size: 1.15rem;
+        padding: 1rem 1.5rem;
+        border-bottom: none; /* Remove header border */
+    }
+
+    .cart-item {
+        display: flex; /* Use flexbox for item layout */
+        align-items: center;
+        padding: 1.25rem 1.5rem; /* Consistent padding */
+        border-bottom: 1px solid #e9ecef; /* Lighter border between items */
+        transition: background-color 0.2s ease-in-out; /* Smooth hover effect */
+    }
+
+        .cart-item:last-child {
+            border-bottom: none; /* No border for the last item */
+        }
+
+        .cart-item:hover {
+            background-color: #fefefe; /* Subtle highlight on hover */
+        }
+
+        .cart-item img {
+            width: 100px; /* Slightly larger image */
+            height: 100px;
+            object-fit: cover;
+            border-radius: 0.5rem; /* Rounded image corners */
+            box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.05); /* Soft shadow for image */
+            margin-right: 1.5rem;
+        }
+
+        .cart-item h5 {
+            font-weight: 600;
+            color: #495057;
+            margin-bottom: 0.25rem;
+        }
+
+        .cart-item .text-muted {
+            font-size: 0.9rem;
+        }
+
+    .quantity-controls .form-control {
+        width: 60px; /* Wider input for quantity */
+        text-align: center;
+        border-radius: 0.25rem;
+        border: 1px solid #ced4da;
+        box-shadow: none;
+    }
+
+    .quantity-controls .btn {
+        width: 35px; /* Larger buttons for +/- */
+        height: 35px;
+        line-height: 1; /* Center text */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.2rem;
+        font-weight: bold;
+        border-radius: 0.25rem;
+    }
+
+    .quantity-controls .btn-outline-secondary {
+        color: #6c757d;
+        border-color: #6c757d;
+    }
+
+        .quantity-controls .btn-outline-secondary:hover {
+            background-color: #6c757d;
+            color: white;
+        }
+
+    .total-summary .fw-bold {
+        color: #212529; /* Darker bold text for totals */
+    }
+
+    .total-summary h4 {
+        color: #007bff; /* Primary blue for final total */
+        font-weight: 700;
+    }
+
+    .btn-primary-custom {
+        background-color: #007bff;
+        border-color: #007bff;
+        color: white;
+        font-weight: 600;
+        transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+    }
+
+        .btn-primary-custom:hover {
+            background-color: #0056b3; /* Darker blue on hover */
+            border-color: #0056b3;
+            color: white;
+        }
+
+    .btn-link.text-danger {
+        font-size: 0.85rem;
+        padding: 0;
+        text-decoration: none; /* Remove underline */
+        color: #dc3545; /* Bootstrap danger color */
+        transition: color 0.2s ease-in-out;
+    }
+
+        .btn-link.text-danger:hover {
+            color: #a71d2a; /* Darker red on hover */
+            text-decoration: underline; /* Add underline on hover */
+        }
+
+    .alert {
+        border-radius: 0.5rem;
+        font-size: 1.1rem;
+        padding: 1.5rem;
+    }
+
+    .alert-link {
+        font-weight: 600;
+    }
+</style>
+
+<div class="container my-5">
+    <nav aria-label="breadcrumb">
+        <ol class="checkout-breadcrumb">
+            <li class="active">Cart</li>
+            <li>/</li>
+            <li><a href="#">Information</a></li>
+            <li>/</li>
+            <li><a href="#">Shipping</a></li>
+            <li>/</li>
+            <li><a href="#">Payment</a></li>
+        </ol>
+    </nav>
+    <h2 class="text-center mb-4">GIỎ HÀNG CỦA BẠN</h2>
+
+    @if (TempData["ErrorMessage"] != null)
+    {
+        <div class="alert alert-danger text-center mb-4" role="alert">
+            @TempData["ErrorMessage"]
+        </div>
+    }
+
+    @if (Model == null || !Model.Items.Any())
+    {
+        <div class="alert alert-info text-center" role="alert">
+            <i class="bi bi-info-circle-fill me-2"></i> Giỏ hàng của bạn đang trống.
+            <a asp-controller="Product" asp-action="Index" class="alert-link">Tiếp tục mua sắm ngay!</a>
+        </div>
+    }
+    else
+    {
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="card shadow-sm mb-4">
+                    <div class="card-header">
+                        Sản phẩm trong giỏ hàng
+                    </div>
+                    <div class="card-body p-0">
+                        @foreach (var item in Model.Items)
+                        {
+                            <div class="cart-item">
+                                <img src="@item.MainImage" class="img-fluid" alt="@item.ProductName">
+                                <div class="flex-grow-1">
+                                    <h5 class="mb-1">@item.ProductName</h5>
+                                    <p class="text-muted mb-1">Màu: @item.Color, Size: @item.Size</p>
+                                    <p class="mb-0">Giá: <span class="fw-bold">@(item.Price.ToString("N0")) VNĐ</span></p>
+                                </div>
+                                <form asp-action="UpdateQuantity" asp-controller="ShoppingCart" method="post" class="d-flex align-items-center">
+                                    @Html.AntiForgeryToken()
+                                    <input type="hidden" name="productId" value="@item.ProductId" />
+                                    <input type="hidden" name="color" value="@item.Color" />
+                                    <input type="hidden" name="size" value="@item.Size" />
+
+                                    @* <button type="submit" name="newQuantity" value="@(item.Quantity - 1)" class="btn btn-outline-secondary btn-sm" @(item.Quantity == 1 ? "disabled" : "")>-</button> *@
+
+                                    <input type="text" value="@item.Quantity" class="form-control form-control-sm mx-1" readonly />
+
+                                    @* <button type="submit" name="newQuantity" value="@(item.Quantity + 1)" class="btn btn-outline-secondary btn-sm">+</button> *@
+                                </form>
+
+
+                                <div class="text-end" style="min-width: 120px;">
+                                    <p class="mb-1 fw-bold text-primary">Tổng: @(item.TotalPrice.ToString("N0")) VNĐ</p>
+                                    <form asp-action="RemoveFromCart" asp-controller="ShoppingCart" method="post" onsubmit="return confirm('Bạn có chắc chắn muốn xóa sản phẩm này khỏi giỏ hàng?');">
+                                        <input type="hidden" name="productId" value="@item.ProductId" />
+                                        <input type="hidden" name="color" value="@item.Color" />
+                                        <input type="hidden" name="size" value="@item.Size" />
+                                        @Html.AntiForgeryToken()
+                                        <button type="submit" class="btn btn-link text-danger">Xóa</button>
+                                    </form>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="card shadow-sm total-summary">
+                    <div class="card-header">
+                        Tổng kết đơn hàng
+                    </div>
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between mb-3 pb-2 border-bottom">
+                            <span>Tạm tính (<span class="fw-bold">@totalQuantity</span> sản phẩm)</span>
+                            <span class="fw-bold">@(cartTotal.ToString("N0")) VNĐ</span>
+                        </div>
+                        <div class="d-flex justify-content-between mb-3 pb-2 border-bottom">
+                            <span>Phí vận chuyển</span>
+                            <span class="text-muted">Tính sau</span>
+                        </div>
+                        <div class="d-flex justify-content-between mb-4 pt-2">
+                            <h4>Tổng cộng</h4>
+                            <h4 class="text-primary-custom">@(cartTotal.ToString("N0")) VNĐ</h4>
+                        </div>
+                        <a asp-action="Checkout" asp-controller="ShoppingCart" class="btn btn-primary-custom w-100 py-2">Tiếp tục thanh toán</a>
+                        <p class="text-center mt-3 mb-0">
+                            <a asp-controller="Product" asp-action="Index" class="text-decoration-none text-muted fw-bold">
+                                <i class="bi bi-arrow-left me-1"></i> Tiếp tục mua sắm
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+@section Scripts {
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+}

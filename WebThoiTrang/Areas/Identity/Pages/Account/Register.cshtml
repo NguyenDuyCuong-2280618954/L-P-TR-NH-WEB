@@ -1,0 +1,288 @@
+﻿@page
+@model RegisterModel
+
+@{
+    ViewData["Title"] = "Đăng ký";
+    // Đặt cờ này để _Layout.cshtml biết khi nào cần hiển thị nền và lớp phủ
+    ViewData["ShowLoginBackgroundAndOverlay"] = true;
+}
+@if (TempData["ErrorMessage"] != null)
+{
+    <div class="alert alert-danger" role="alert">
+        @TempData["ErrorMessage"]
+    </div>
+}
+@section Styles {
+    <style>
+        /* CSS cho body để đặt hình nền CHỈ KHI TRUY CẬP TRANG NÀY */
+        body {
+            background-image: url('/images/backgroud/background_login.jpeg'); /* SỬA ĐƯỜNG DẪN NẾU CẦN */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-color: transparent !important; /* Đảm bảo background không bị màu trắng của body che mất */
+        }
+
+        /* Lớp phủ toàn màn hình */
+        .page-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* Màu đen với độ mờ 50% */
+            z-index: 1; /* Nằm dưới header/nav/footer và trên background */
+        }
+
+        /* Đảm bảo header nằm trên lớp phủ */
+        header {
+            position: relative; /* Quan trọng để z-index có tác dụng */
+            z-index: 1021; /* Cao hơn z-index mặc định của sticky-top (1020) và overlay (1) */
+        }
+
+        /* Đảm bảo thanh điều hướng thứ hai ("Home", "All Products",...) nằm trên lớp phủ */
+        .navbar.d-lg-block {
+            position: relative;
+            z-index: 1020;
+        }
+
+        /* Đảm bảo footer nằm trên lớp phủ */
+        footer {
+            /* Không cần thay đổi position ở đây nếu nó đã được định nghĩa trong site.css hoặc _Layout */
+        }
+
+        /* Wrapper chính để căn giữa form đăng ký */
+        .main-content-wrapper {
+            position: relative;
+            z-index: 2; /* Đảm bảo form nằm trên lớp phủ và background */
+            display: flex; /* <-- Sử dụng flexbox để căn giữa nội dung */
+            justify-content: center;
+            align-items: center;
+            flex-grow: 1; /* Cho phép nó mở rộng để chiếm không gian còn lại */
+            width: 100%; /* Đảm bảo chiếm toàn bộ chiều rộng */
+        }
+
+        /* Container cho form (kiểu dáng giống login-container) */
+        .register-container { /* Đổi tên class để phân biệt với login-container nếu cần tùy chỉnh riêng */
+            background-color: #fff;
+            padding: 30px 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 450px; /* Có thể rộng hơn login-container nếu form dài hơn */
+            text-align: center;
+            margin: auto;
+        }
+
+        /* Các tab Đăng nhập / Đăng ký */
+        .form-tabs {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 30px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .tab-item {
+            flex: 1;
+            padding-bottom: 15px;
+            cursor: pointer;
+            font-size: 1.1em;
+            font-weight: bold;
+            color: #888;
+            position: relative;
+            text-decoration: none; /* Đảm bảo tab Đăng ký không bị gạch chân */
+        }
+
+            .tab-item.active {
+                color: #000;
+            }
+
+                .tab-item.active::after {
+                    content: '';
+                    position: absolute;
+                    bottom: -1px;
+                    left: 0;
+                    width: 100%;
+                    height: 3px;
+                    background-color: #000;
+                }
+
+        /* Form control styles (giống Login) */
+        .form-floating > .form-control,
+        .form-floating > .form-select { /* Thêm .form-select cho dropdown Role */
+            height: calc(3.5rem + 2px);
+            padding: 1rem 0.75rem;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+
+        .form-floating > label {
+            padding: 1rem 0.75rem;
+            color: #888;
+        }
+
+        .form-floating > .form-control:not(:placeholder-shown) {
+            padding-top: 1.625rem;
+            padding-bottom: 0.625rem;
+        }
+
+            .form-floating > .form-control:focus ~ label,
+            .form-floating > .form-control:not(:placeholder-shown) ~ label,
+            .form-floating > .form-select ~ label {
+                opacity: .65;
+                transform: scale(.85) translateY(-0.5rem) translateX(0.15rem);
+            }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        /* Button đăng ký (giống btn-login) */
+        .register-button-container {
+            display: block;
+            width: 100%;
+            margin-top: 30px;
+        }
+
+        .btn-register { /* Đổi tên class để phân biệt nếu cần */
+            width: 100%;
+            background-color: #000;
+            color: #fff;
+            border: none;
+            padding: 15px 0;
+            font-size: 1.1em;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+            .btn-register:hover {
+                background-color: #333;
+            }
+
+        .text-danger {
+            text-align: left;
+            font-size: 0.9em;
+            margin-top: 5px;
+        }
+
+        /* Style cho phần external login providers */
+        .external-logins-section h3 {
+            font-size: 1.2em;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            text-align: center; /* Căn giữa tiêu đề */
+        }
+
+        .external-logins-section hr {
+            margin-bottom: 20px;
+        }
+
+        .external-logins-section form {
+            display: flex;
+            justify-content: center; /* Căn giữa các nút */
+        }
+
+        .external-logins-section button.btn {
+            margin: 5px;
+            /* Thêm style cho nút nếu muốn giống phong cách button của bạn */
+            background-color: #4285F4; /* Ví dụ cho Google, có thể điều chỉnh */
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+            .external-logins-section button.btn:hover {
+                background-color: #357AE8;
+            }
+    </style>
+}
+
+<div class="main-content-wrapper">
+    <div class="register-container">
+        <div class="form-tabs">
+            <a href="@Url.Page("./Login")" class="tab-item" id="loginTab">Đăng nhập</a>
+            <div class="tab-item active" id="registerTab">Đăng ký</div>
+        </div>
+
+        <section>
+            <form id="registerForm" asp-route-returnUrl="@Model.ReturnUrl" method="post">
+                @* <h2>Create a new account.</h2> *@
+                @* <hr /> *@
+                <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
+
+                <div class="form-floating mb-3">
+                    <input asp-for="Input.FullName" class="form-control" autocomplete="fullname" aria-required="true" placeholder="Full Name" />
+                    <label asp-for="Input.FullName">Họ và Tên</label>
+                    <span asp-validation-for="Input.FullName" class="text-danger"></span>
+                </div>
+
+                <div class="form-floating mb-3">
+                    <input asp-for="Input.Email" class="form-control" autocomplete="username" aria-required="true" placeholder="name@example.com" />
+                    <label asp-for="Input.Email">Email</label>
+                    <span asp-validation-for="Input.Email" class="text-danger"></span>
+                </div>
+                <div class="form-floating mb-3">
+                    <input asp-for="Input.Password" class="form-control" autocomplete="new-password" aria-required="true" placeholder="password" />
+                    <label asp-for="Input.Password">Mật khẩu</label>
+                    <span asp-validation-for="Input.Password" class="text-danger"></span>
+                </div>
+                <div class="form-floating mb-3">
+                    <input asp-for="Input.ConfirmPassword" class="form-control" autocomplete="new-password" aria-required="true" placeholder="password" />
+                    <label asp-for="Input.ConfirmPassword">Xác nhận mật khẩu</label>
+                    <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
+                </div>
+
+                <div class="form-floating mb-3">
+                    <select asp-for="Input.Role" asp-items="@Model.Input.RoleList" class="form-control">
+                        <option disabled selected>-Chọn vai trò-</option>
+                    </select>
+                    <label asp-for="Input.Role">Vai trò</label> <span asp-validation-for="Input.Role" class="text-danger"></span>
+                </div>
+
+                <div class="register-button-container">
+                    <button id="registerSubmit" type="submit" class="btn-register">Đăng ký</button>
+                </div>
+            </form>
+        </section>
+
+        <section class="external-logins-section">
+            <h3>Hoặc đăng ký bằng tài khoản khác.</h3>
+            <hr />
+            @{
+                if ((Model.ExternalLogins?.Count ?? 0) == 0)
+                {
+                    <div>
+                        <p>
+                            Không có dịch vụ xác thực bên ngoài nào được cấu hình. Xem <a href="https://go.microsoft.com/fwlink/?LinkID=532715">
+                                bài viết này
+                                về cách thiết lập ứng dụng ASP.NET để hỗ trợ đăng nhập qua các dịch vụ bên ngoài
+                            </a>.
+                        </p>
+                    </div>
+                }
+                else
+                {
+                    <form id="external-account" asp-page="./ExternalLogin" asp-route-returnUrl="@Model.ReturnUrl" method="post" class="form-horizontal">
+                        <div>
+                            <p>
+                                @foreach (var provider in Model.ExternalLogins!)
+                                {
+                                    <button type="submit" class="btn btn-primary" name="provider" value="@provider.Name" title="Đăng nhập bằng tài khoản @provider.DisplayName">@provider.DisplayName</button>
+                                }
+                            </p>
+                        </div>
+                    </form>
+                }
+            }
+        </section>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

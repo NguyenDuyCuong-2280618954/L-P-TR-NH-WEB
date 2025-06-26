@@ -1,0 +1,156 @@
+﻿@model CheckoutViewModel
+
+@{
+    ViewData["Title"] = "Thanh toán";
+}
+
+<div class="container my-4">
+    <!-- Checkout breadcrumb -->
+    <nav aria-label="Checkout steps" class="mb-4">
+        <ol class="breadcrumb justify-content-center">
+            <li class="breadcrumb-item"><a href="#">Cart</a></li>
+            <li class="breadcrumb-item"><a href="#">Information</a></li>
+            <li class="breadcrumb-item active">Shipping</li>
+            <li class="breadcrumb-item">Payment</li>
+        </ol>
+    </nav>
+
+    <form asp-action="Checkout" method="post">
+        <div class="row">
+            <!-- LEFT COLUMN -->
+            <div class="col-lg-8">
+                <!-- SHIPPING INFO -->
+                <section class="mb-4">
+                    <h4 class="mb-3">Địa chỉ giao hàng</h4>
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <label class="form-label">Họ và tên *</label>
+                            <input asp-for="ShippingInfo.FullName" class="form-control" required />
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">Số điện thoại *</label>
+                            <input asp-for="ShippingInfo.Phone" class="form-control" required />
+                        </div>
+                        <div class="col-md-4">
+                            <label class="form-label">Tỉnh/Thành *</label>
+                            <select asp-for="ShippingInfo.City" class="form-select" required>
+                                <option value="">Chọn Tỉnh/Thành</option>
+                                <option>Ho Chi Minh</option>
+                                <option>Ha Noi</option>
+                                <option>Da Nang</option>
+                            </select>
+                        </div>
+                        <div class="col-md-4">
+                            <label class="form-label">Quận/Huyện *</label>
+                            <select asp-for="ShippingInfo.District" class="form-select" required>
+                                <option value="">Chọn Quận/Huyện</option>
+                            </select>
+                        </div>
+                        <div class="col-md-4">
+                            <label class="form-label">Phường/Xã *</label>
+                            <select asp-for="ShippingInfo.Ward" class="form-select" required>
+                                <option value="">Chọn Phường/Xã</option>
+                            </select>
+                        </div>
+                        <div class="col-12">
+                            <label class="form-label">Địa chỉ cụ thể *</label>
+                            <input asp-for="ShippingInfo.Address" class="form-control" placeholder="Số nhà, đường..." required />
+                        </div>
+                    </div>
+                </section>
+
+                <!-- GIFT WRAP -->
+                <section class="mb-4 p-3 border rounded">
+                    <h5 class="mb-3">Dịch vụ gói quà</h5>
+                    <div class="form-check">
+                        <input asp-for="IsGiftWrap" class="form-check-input" data-fee="199000" id="giftWrap" type="checkbox" />
+                        <label class="form-check-label" for="giftWrap">
+                            <strong>Gói quà</strong> – thêm trải nghiệm mở hộp đặc biệt (+199.000&nbsp;VND)
+                        </label>
+                    </div>
+                    <input type="hidden" asp-for="GiftWrapFee" />
+                </section>
+
+                <!-- PAYMENT INFO -->
+                <section class="mb-4">
+                    <h5 class="mb-3">Phương thức thanh toán</h5>
+                    <div class="form-check mb-2">
+                        <input class="form-check-input" type="radio" asp-for="PaymentInfo.Method" value="COD" id="payCOD" checked />
+                        <label class="form-check-label" for="payCOD">Thanh toán khi nhận hàng (COD)</label>
+                    </div>
+                    <div class="form-check mb-2">
+                        <input class="form-check-input" type="radio" asp-for="PaymentInfo.Method" value="Banking" id="payBank" />
+                        <label class="form-check-label" for="payBank">Chuyển khoản ngân hàng</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" asp-for="PaymentInfo.Method" value="Momo" id="payMomo" />
+                        <label class="form-check-label" for="payMomo">Ví MoMo</label>
+                    </div>
+                </section>
+
+                <!-- ORDER NOTES -->
+                <section class="mb-4">
+                    <h5 class="mb-3">Ghi chú đơn hàng</h5>
+                    <textarea asp-for="PaymentInfo.Note" class="form-control" rows="3" placeholder="Ghi chú đặc biệt (tuỳ chọn)"></textarea>
+                </section>
+            </div>
+
+            <!-- RIGHT COLUMN: ORDER SUMMARY -->
+            <div class="col-lg-4">
+                <div class="bg-light p-4 rounded sticky-top">
+                    <h5 class="mb-3">Đơn hàng của bạn</h5>
+
+                    @foreach (var item in Model.CartItems)
+                    {
+                        <div class="d-flex mb-3 pb-3 border-bottom">
+                            <img src="@Url.Content(item.MainImage)" style="width:60px;height:60px;object-fit:cover" class="me-3" />
+                            <div class="flex-grow-1 small">
+                                <div>@item.ProductName</div>
+                                <div class="text-muted">Size: @item.Size | Màu: @item.Color | SL: @item.Quantity</div>
+                            </div>
+                            <div class="fw-bold">@item.Price.ToString("N0")</div>
+                        </div>
+                    }
+
+                    <div class="d-flex justify-content-between mb-2"><span>Tạm tính:</span><span>@Model.SubTotal.ToString("N0")</span></div>
+                    <div class="d-flex justify-content-between mb-2"><span>Phí vận chuyển:</span><span>@Model.ShippingFee.ToString("N0")</span></div>
+                    <div class="d-flex justify-content-between mb-2 gift-fee d-none">
+                        <span>Phí gói quà:</span><span id="giftFeeText"></span>
+                    </div>
+                    <hr />
+                    <div class="d-flex justify-content-between mb-3">
+                        <strong>Tổng cộng:</strong>
+                        <strong id="orderTotal" class="text-danger">@Model.Total.ToString("N0")</strong>
+                    </div>
+
+                    <button type="submit" class="btn btn-dark w-100">Đặt hàng</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    <script>
+        const chkGift   = document.getElementById('giftWrap');
+        const giftFeeUi = document.querySelector('.gift-fee');
+        const giftFeeTxt= document.getElementById('giftFeeText');
+        const totalUi   = document.getElementById('orderTotal');
+        const hiddenFee = document.querySelector('input[name="GiftWrapFee"]');
+
+        const baseTotal = @Model.SubTotal + @Model.ShippingFee;
+        const giftFee   = parseInt(chkGift.dataset.fee);
+
+        function format(n){return n.toLocaleString('vi-VN');}
+        function recalc(){
+            const isOn = chkGift.checked;
+            const fee  = isOn ? giftFee : 0;
+            hiddenFee.value = fee;
+            giftFeeUi.classList.toggle('d-none', !isOn);
+            if(isOn){ giftFeeTxt.textContent = format(fee); }
+            totalUi.textContent = format(baseTotal + fee);
+        }
+        chkGift.addEventListener('change', recalc);
+        recalc(); // init
+    </script>
+}
